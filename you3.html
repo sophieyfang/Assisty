@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>For You</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<!-- header -->
+<div id="mySidenav" class="sidenav">
+  	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	<a href="index.html">Home</a>
+	<a href="about.html">Why Us</a>
+	<a href="gift.html">Gift it</a>
+	<a href="https://www.etsy.com">Shop</a>
+</div>
+
+<div class="head">
+	<span style="font-size:30px;cursor:pointer" onclick="openNav()">+</span>
+	<a href="you.html">For You</a>
+</div>
+<!-- header -->
+
+<!-- questions -->
+<div class="youquestion3">
+	<p>What color do you dislike?</p>
+	<figure>
+		<div class="yellow" onclick="chooseColor('yellow')"></div>
+		<figcaption>yellow</figcaption>
+	</figure>
+	<figure>
+		<div class="green" onclick="chooseColor('green')"></div>
+		<figcaption>green</figcaption>
+	</figure>
+	<figure>
+		<div class="blue" onclick="chooseColor('blue')"></div>
+		<figcaption>blue</figcaption>
+	</figure><br>
+	<figure>
+		<div class="pink" onclick="chooseColor('pink')"></div>
+		<figcaption>pink</figcaption>
+	</figure>
+	<figure>
+		<div class="red" onclick="chooseColor('red')"></div>
+		<figcaption>red</figcaption>
+	</figure>
+	<figure>
+		<div class="orange" onclick="chooseColor('orange')"></div>
+		<figcaption>orange</figcaption>
+	</figure><br>
+	<figure>
+		<div class="black" onclick="chooseColor('black')"></div>
+		<figcaption>black</figcaption>
+	</figure>
+	<figure>
+		<div class="white" onclick="chooseColor('white')"></div>
+		<figcaption>white</figcaption>
+	</figure>
+	<figure>
+		<div class="grey" onclick="chooseColor('grey')"></div>
+		<figcaption>grey</figcaption>
+	</figure>
+</div>
+<!-- questions -->
+
+<!-- footer -->
+<ul class="footer">
+	<li>FAQ</li>
+	<li>Terms of Use</li>
+	<li>Privacy Policy</li>
+	<li>Contact</li>
+</ul>
+<!-- footer -->
+
+<script>
+	function openNav() {
+    document.getElementById("mySidenav").style.width = "17vw";
+}
+function chooseColor(val) {
+	if(typeof(Storage) !== "undefined") {
+        sessionStorage.color = val;
+    } else {
+        document.getElementByClass("youquestion3").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+    console.log(sessionStorage.color);
+  	window.open("you4.html", "_self");
+}
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+</body>
+</html>
