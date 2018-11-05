@@ -53,15 +53,18 @@ function closeNav() {
 
 tags = ""+sessionStorage.showooff+","+sessionStorage.color+","+sessionStorage.fit+","+sessionStorage.occasion+","+sessionStorage.clothes+","+sessionStorage.category;
 console.log(tags);
-var myurl = "http://localhost:9200/items/_search?q=tags:dress,pink,parties";
+var myurl = "http://localhost:9200/items/_search?q=tags:"+tags;
 // json file url
-$.getJSON(myurl, function(data){
-alert('Your query count: ' + data.query.count);
-
-
-	// ??? because I don't know how to call the different products
-
+$.getJSON( myurl, function( data ) {
+  var items = [];
+  console.log(data.hits.hits)
+  $.each( data.hits.hits, function( index, value ) {
+  	console.log(value._source);
+  			$(".container").append("<a href=" + value._source.itemurl + ">" + "<img class='prodimg' src=" + value._source.imageUrl + "><p class='prodname'>" + value._source.name + "</p><p class='seller'>" + value._source.sellerName + "</p><p class='price'>" + value._source.price + "</p></a>");
+  });
+ 
 });
+
 
 
 </script>
