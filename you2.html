@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>For You</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://use.typekit.net/znk3xkz.css">
+</head>
+<body>
+
+<!-- header -->
+<div id="mySidenav" class="sidenav">
+  	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	<a href="index.html">Home</a>
+	<a href="about.html">Why Us</a>
+	<a href="gift.html">Gift it</a>
+	<a href="https://www.etsy.com">Shop</a>
+</div>
+
+<div class="head">
+	<span onclick="openNav()">+</span>
+	<a href="you.html">For You</a>
+</div>
+<!-- header -->
+
+<!-- questions -->
+<div class="youquestion2">
+	<p id = "occasion">What is the occasion?</p>
+	<div>
+		<p class="question2p" onclick="chooseOccasion('work')">work</p>
+	</div>
+	<div>
+		<p class="question2p" onclick="chooseOccasion('meetup')">meetup</p>
+	</div>
+	<div>
+		<p class="question2p" onclick="chooseOccasion('date')">date</p>
+	</div>
+	<div>
+		<p class="question2p" onclick="chooseOccasion('party')">party</p>
+	</div>
+	<div>
+		<p class="question2p" onclick="chooseOccasion('vacation')">vacation</p>
+	</div>
+</div>
+<!-- questions -->
+
+<script>
+	function openNav() {
+    document.getElementById("mySidenav").style.width = "16vw";
+}
+function chooseOccasion(val) {
+	if(typeof(Storage) !== "undefined") {
+        sessionStorage.occasion = val;
+    } else {
+        document.getElementById("occasion").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+    console.log(sessionStorage.occasion);
+  	window.open("you3.html", "_self");
+}
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+</body>
+</html>

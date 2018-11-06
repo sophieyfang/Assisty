@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>For You</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://use.typekit.net/znk3xkz.css">
+</head>
+<body>
+
+<!-- header -->
+<div id="mySidenav" class="sidenav">
+  	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	<a href="index.html">Home</a>
+	<a href="about.html">Why Us</a>
+	<a href="gift.html">Gift it</a>
+	<a href="https://www.etsy.com">Shop</a>
+</div>
+
+<div class="head">
+	<span onclick="openNav()">+</span>
+	<a href="you.html">For You</a>
+</div>
+<!-- header -->
+
+<!-- questions -->
+<div class="youquestion5">
+	<p>Which part of your body do you want to show off?</p>
+	<figure>
+		<img src="images/arms.png" width="100%" class="imgselection" onclick="chooseShowOff('arms')">
+		<figcaption>arms</figcaption>
+	</figure>
+	<figure>
+		<img src="images/shoulders.png" width="100%" class="imgselection" onclick="chooseShowOff('shoulders')">
+		<figcaption>shoulders</figcaption>
+	</figure>
+	<figure>
+		<img src="images/legs.png" width="100%" class="imgselection" onclick="chooseShowOff('legs')">
+		<figcaption>legs</figcaption>
+	</figure>
+	<figure>
+		<img src="images/back.png" width="100%" class="imgselection" onclick="chooseShowOff('back')">
+		<figcaption>back</figcaption>
+	</figure>
+	<figure>
+		<img src="images/abs.png" width="100%" class="imgselection" onclick="chooseShowOff('abs')">
+		<figcaption>abs</figcaption>
+	</figure>
+</div>
+<!-- questions -->
+
+<script>
+	function openNav() {
+    document.getElementById("mySidenav").style.width = "16vw";
+}
+function chooseShowOff(val) {
+	if(typeof(Storage) !== "undefined") {
+        sessionStorage.showooff = val;
+    } else {
+        document.getElementByClass("youquestion5").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+    console.log(sessionStorage.showooff);
+  	window.open("you6.html", "_self");
+}
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+</body>
+</html>
