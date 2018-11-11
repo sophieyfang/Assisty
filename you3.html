@@ -25,50 +25,58 @@
 
 <!-- questions -->
 <div class="youquestion3">
-	<p>What color do you dislike?</p>
+	<p>Which colors do you like?</p>
 	<figure>
-		<div class="yellow imgselection" onclick="chooseColor('yellow')"></div>
-		<figcaption>yellow</figcaption>
+		<img src="images/yellow.png" class="imgselection" width="100%">
+		<!-- <figcaption>yellow</figcaption> -->
 	</figure>
 	<figure>
-		<div class="green imgselection" onclick="chooseColor('green')"></div>
-		<figcaption>green</figcaption>
+		<img src="images/green.png" class="imgselection" width="100%">
+		<!-- <figcaption>green</figcaption> -->
 	</figure>
 	<figure>
-		<div class="blue imgselection" onclick="chooseColor('blue')"></div>
-		<figcaption>blue</figcaption>
+		<img src="images/blue.png" class="imgselection" width="100%">
+		<!-- <figcaption>blue</figcaption> -->
 	</figure><br>
 	<figure>
-		<div class="pink imgselection" onclick="chooseColor('pink')"></div>
-		<figcaption>pink</figcaption>
+		<img src="images/pink.png" class="imgselection" width="100%">
+		<!-- <figcaption>pink</figcaption> -->
 	</figure>
 	<figure>
-		<div class="red imgselection" onclick="chooseColor('red')"></div>
-		<figcaption>red</figcaption>
+		<img src="images/red.png" class="imgselection" width="100%">
+		<!-- <figcaption>red</figcaption> -->
 	</figure>
 	<figure>
-		<div class="orange imgselection" onclick="chooseColor('orange')"></div>
-		<figcaption>orange</figcaption>
+		<img src="images/orange.png" class="imgselection" width="100%">
+		<!-- <figcaption>orange</figcaption> -->
 	</figure><br>
 	<figure>
-		<div class="black imgselection" onclick="chooseColor('black')"></div>
-		<figcaption>black</figcaption>
+		<img src="images/black.png" class="imgselection" width="100%">
+		<!-- <figcaption>black</figcaption> -->
 	</figure>
 	<figure>
-		<div class="white imgselection" onclick="chooseColor('white')"></div>
-		<figcaption>white</figcaption>
+		<img src="images/white.png" class="imgselection" id="white" width="100%">
+		<!-- <figcaption>white</figcaption> -->
 	</figure>
 	<figure>
-		<div class="grey imgselection" onclick="chooseColor('grey')"></div>
-		<figcaption>grey</figcaption>
-	</figure>
+		<img src="images/grey.png" class="imgselection" width="100%">
+		<!-- <figcaption>grey</figcaption> -->
+	</figure><br>
+	<a href="you4.html"><button class="stylebuttoncolor">done &rsaquo;</button></a>
 </div>
+
+
 <!-- questions -->
 
 <script>
-	function openNav() {
+function openNav() {
     document.getElementById("mySidenav").style.width = "16vw";
 }
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+
 function chooseColor(val) {
 	if(typeof(Storage) !== "undefined") {
         sessionStorage.color = val;
@@ -78,9 +86,7 @@ function chooseColor(val) {
     console.log(sessionStorage.color);
   	window.open("you4.html", "_self");
 }
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
+
 </script>
 </body>
 </html>

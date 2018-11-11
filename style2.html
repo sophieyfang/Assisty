@@ -24,53 +24,42 @@
 <!-- header -->
 
 <!-- questions -->
-<div class="youquestion6">
-	<p>What length do you prefer?</p>
+<div class="style1">
+	<p>Which style do you prefer?</p>
 	<figure>
-		<img src="images/length3.png" width="70%" class="imgselection">
-		<figcaption>short</figcaption>
+		<img src="images/boho.png" width="100%" class="imgselection2">
 	</figure>
 	<figure>
-		<img src="images/length2.png" width="70%" class="imgselection">
-		<figcaption>medium</figcaption>
+		<img src="images/sexy.png" width="100%" class="imgselection2">
 	</figure>
 	<figure>
-		<img src="images/length1.png" width="70%" class="imgselection">
-		<figcaption>long</figcaption>
-	</figure>
-	<br>
-	<figure>
-		<img src="images/length4.png" width="100%" class="imgselection">
-		<figcaption>short</figcaption>
+		<img src="images/artsy.png" width="100%" class="imgselection2">
 	</figure>
 	<figure>
-		<img src="images/length5.png" width="100%" class="imgselection">
-		<figcaption>medium</figcaption>
-	</figure>
-	<figure>
-		<img src="images/length6.png" width="100%" class="imgselection">
-		<figcaption>long</figcaption>
+		<img src="images/edgy.png" width="100%" class="imgselection2">
 	</figure>
 	<br>
-	<a href="you7.html"><button class="stylebutton">done &rsaquo;</button></a>
+	<a href="results.html"><button class="stylebutton">done &rsaquo;</button></a>
 </div>
 <!-- questions -->
 
 <script>
-	function openNav() {
+function openNav() {
     document.getElementById("mySidenav").style.width = "16vw";
 }
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+
 function chooseShowOff(val) {
 	if(typeof(Storage) !== "undefined") {
         sessionStorage.showooff = val;
     } else {
-        document.getElementByClass("youquestion6").innerHTML = "Sorry, your browser does not support web storage...";
+        document.getElementByClass("youquestion7").innerHTML = "Sorry, your browser does not support web storage...";
     }
     console.log(sessionStorage.showooff);
-  	window.open("you7.html", "_self");
-}
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
+  	window.open("you8.html", "_self");
 }
 </script>
 </body>
