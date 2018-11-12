@@ -27,47 +27,130 @@
 <div class="youquestion6">
 	<p>What length do you prefer?</p>
 	<figure>
-		<img src="images/length3.png" width="70%" class="imgselection">
+		<img src="images/length3.png" width="70%" class="imgselection" onclick="chooseDressLength('short')" id="dressShort">
 		<figcaption>short</figcaption>
 	</figure>
 	<figure>
-		<img src="images/length2.png" width="70%" class="imgselection">
+		<img src="images/length2.png" width="70%" class="imgselection" onclick="chooseDressLength('medium')" id="dressMedium">
 		<figcaption>medium</figcaption>
 	</figure>
 	<figure>
-		<img src="images/length1.png" width="70%" class="imgselection">
+		<img src="images/length1.png" width="70%" class="imgselection" onclick="chooseDressLength('long')" id="dressLong">
 		<figcaption>long</figcaption>
 	</figure>
 	<br>
 	<figure>
-		<img src="images/length4.png" width="100%" class="imgselection">
+		<img src="images/length4.png" width="100%" class="imgselection" onclick="chooseSleeve('short')" id="sleeveShort">
 		<figcaption>short</figcaption>
 	</figure>
 	<figure>
-		<img src="images/length5.png" width="100%" class="imgselection">
+		<img src="images/length5.png" width="100%" class="imgselection" onclick="chooseSleeve('medium')" id="sleeveMedium">
 		<figcaption>medium</figcaption>
 	</figure>
 	<figure>
-		<img src="images/length6.png" width="100%" class="imgselection">
+		<img src="images/length6.png" width="100%" class="imgselection" onclick="chooseSleeve('long')" id="sleeveLong">
 		<figcaption>long</figcaption>
 	</figure>
 	<br>
-	<a href="you7.html"><button class="stylebutton">done &rsaquo;</button></a>
+	<button class="stylebutton" onclick="getLength()">done &rsaquo;</button>
 </div>
 <!-- questions -->
 
 <script>
-	function openNav() {
+function openNav() {
     document.getElementById("mySidenav").style.width = "16vw";
 }
-function chooseShowOff(val) {
+function getLength(){
+	len = []
+	if(dressLength!=null)
+		len.push(dressLength)
+	if(sleeveLength!=null)
+		len.push(sleeveLength)
 	if(typeof(Storage) !== "undefined") {
-        sessionStorage.showooff = val;
+		sessionStorage.len = null
+		if(len.length!=0)
+        	sessionStorage.len = len.join();
     } else {
         document.getElementByClass("youquestion6").innerHTML = "Sorry, your browser does not support web storage...";
     }
-    console.log(sessionStorage.showooff);
+    console.log(sessionStorage.len);
   	window.open("you7.html", "_self");
+	
+}
+dressLength = null
+dressShort = false
+dressMedium = false
+dressLong = false
+function chooseDressLength(val) {
+	dressLength = null
+	document.getElementById("dressShort").style.boxShadow = "";
+	document.getElementById("dressMedium").style.boxShadow = "";
+	document.getElementById("dressLong").style.boxShadow = "";
+	if(val=="short"){
+		dressShort = !dressShort
+		if(dressShort){
+			dressMedium = false
+			dressLong = false
+			dressLength = "dressShort"
+			document.getElementById("dressShort").style.boxShadow = "10px 20px 30px lightblue";
+		}
+	}
+	if(val=="medium"){
+		dressMedium = !dressMedium
+		if(dressMedium){
+			dressShort = false
+dressLong = false
+			dressLength = "dressMedium"
+			document.getElementById("dressMedium").style.boxShadow = "10px 20px 30px lightblue";
+		}
+	}
+	if(val=="long"){
+		dressLong=!dressLong
+		if(dressLong){
+			dressShort = false
+dressMedium = false
+			dressLength = "dressLong"
+			document.getElementById("dressLong").style.boxShadow = "10px 20px 30px lightblue";
+		}
+	}
+}
+sleeveLength = null
+sleeveShort = false
+sleeveMedium = false
+sleeveLong = false
+function chooseSleeve(val) {
+	sleeveLength = null
+	document.getElementById("sleeveShort").style.boxShadow = "";
+	document.getElementById("sleeveMedium").style.boxShadow = "";
+	document.getElementById("sleeveLong").style.boxShadow = "";
+
+	if(val=="short"){
+		sleeveShort = !sleeveShort
+		if(sleeveShort){
+			sleeveMedium = false
+			sleeveLong = false
+			sleeveLength = "sleeveShort"
+			document.getElementById("sleeveShort").style.boxShadow = "10px 20px 30px lightblue";
+		}
+	}
+	if(val=="medium"){
+		sleeveMedium = !sleeveMedium
+		if(sleeveMedium){
+			sleeveShort = false
+			sleeveLong = false
+			sleeveLength = "sleeveMedium"
+			document.getElementById("sleeveMedium").style.boxShadow = "10px 20px 30px lightblue";
+		}
+	}
+	if(val=="long"){
+		sleeveLong=!sleeveLong
+		if(sleeveLong){
+			sleeveShort = false
+			sleeveMedium = false
+			sleeveLength = "sleeveLong"
+			document.getElementById("sleeveLong").style.boxShadow = "10px 20px 30px lightblue";
+		}
+	}
 }
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";

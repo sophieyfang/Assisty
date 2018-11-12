@@ -27,16 +27,16 @@
 <div class="style1">
 	<p>Which style do you prefer?</p>
 	<figure>
-		<img src="images/minimalist.png" width="100%" class="imgselection2">
+		<img src="images/minimalist.png" width="100%" class="imgselection2" id="minimalist" onclick="chooseStyle4('minimalist')">
 	</figure>
 	<figure>
-		<img src="images/preppy.png" width="100%" class="imgselection2">
+		<img src="images/preppy.png" width="100%" class="imgselection2" id="preppy" onclick="chooseStyle4('preppy')">
 	</figure>
 	<figure>
-		<img src="images/casual.png" width="100%" class="imgselection2">
+		<img src="images/casual.png" width="100%" class="imgselection2" id="casual" onclick="chooseStyle4('casual')">
 	</figure>
 	<br>
-	<a href="results.html"><button class="stylebutton">done &rsaquo;</button></a>
+	<button class="stylebutton" onclick="addStyle4()" >done &rsaquo;</button>
 </div>
 <!-- questions -->
 
@@ -49,14 +49,52 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
 
-function chooseShowOff(val) {
+minimalist = false
+preppy = false
+casual = false
+function chooseStyle4(val) {
+	if(val=='minimalist'){
+		minimalist = !minimalist
+		if(minimalist)
+			document.getElementById("minimalist").style.boxShadow = "10px 20px 30px lightblue";
+		else {
+			document.getElementById("minimalist").style.boxShadow = "";
+		}
+	}
+	if(val=='preppy'){
+		preppy = !preppy
+		if(preppy)
+			document.getElementById("preppy").style.boxShadow = "10px 20px 30px lightblue";
+		else {
+			document.getElementById("preppy").style.boxShadow = "";
+		}
+	}
+		if(val=='casual'){
+		casual = !casual
+		if(casual)
+			document.getElementById("casual").style.boxShadow = "10px 20px 30px lightblue";
+		else {
+			document.getElementById("casual").style.boxShadow = "";
+		}
+	}
+
+}
+
+function addStyle4(){
+	var styles = []
+	if(minimalist)
+		styles.push("minimalist")
+	if(casual)
+		styles.push("casual")
+	if(preppy)
+		styles.push("preppy")
 	if(typeof(Storage) !== "undefined") {
-        sessionStorage.showooff = val;
-    } else {
-        document.getElementByClass("youquestion7").innerHTML = "Sorry, your browser does not support web storage...";
+		sessionStorage.style4 = null
+		if(styles.length!=0)
+        	sessionStorage.style4 = styles.join();
     }
-    console.log(sessionStorage.showooff);
-  	window.open("you8.html", "_self");
+    console.log(sessionStorage.style4);
+  	//window.open("results.html", "_self");
 }
 </script>
 </body>

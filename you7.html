@@ -50,15 +50,6 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
 
-function chooseShowOff(val) {
-	if(typeof(Storage) !== "undefined") {
-        sessionStorage.showooff = val;
-    } else {
-        document.getElementByClass("youquestion7").innerHTML = "Sorry, your browser does not support web storage...";
-    }
-    console.log(sessionStorage.showooff);
-  	window.open("you8.html", "_self");
-}
 </script>
 </body>
 </html>
