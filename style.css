@@ -559,4 +559,8 @@ li {
 
 .prodname {
 	width: 10vw;
+	font-family: courier-std, mono;
+	text-transform: lowercase;
+	font-size: 1.3vw;
+	background-color: red;
 }
