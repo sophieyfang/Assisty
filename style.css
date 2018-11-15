@@ -549,6 +549,7 @@ li {
 	height: 49vw;
 	z-index: -1;
 	margin-left: 5vw;
+	display: inline-block;
 }
 
 .prodimg {
