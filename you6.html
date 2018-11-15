@@ -88,36 +88,34 @@ sleeveShort = false
 sleeveMedium = false
 sleeveLong = false
 if(sessionStorage.len!=null){
-	console.log("still here");
-	console.log(sessionStorage.len);
-	if(sessionStorage.len.indexOf('dressShort')>=0){
+	if(sessionStorage.len.indexOf('tShort')>=0){
 		dressShort = true;
-		dressLength = "dressShort"
+		dressLength = "tShort"
 		document.getElementById("dressShort").style.WebkitAnimation = "imageselection 0.6s ease infinite";
 	}
-	if(sessionStorage.len.indexOf('dressMedium')>=0){
+	if(sessionStorage.len.indexOf('tMedium')>=0){
 		dressMedium = true;
-		dressLength = "dressMedium"
+		dressLength = "tMedium"
 		document.getElementById("dressMedium").style.WebkitAnimation = "imageselection 0.6s ease infinite";
 	}
-	if(sessionStorage.len.indexOf('dressLong')>=0){
+	if(sessionStorage.len.indexOf('tLong')>=0){
 		dressLong = true;
-		dressLength = "dressLong"
+		dressLength = "tLong"
 		document.getElementById("dressLong").style.WebkitAnimation = "imageselection 0.6s ease infinite";
 	}
-	if(sessionStorage.len.indexOf('sleeveShort')>=0){
+	if(sessionStorage.len.indexOf('sShort')>=0){
 		sleeveShort = true;
-		sleeveLength = "sleeveShort"
+		sleeveLength = "sShort"
 		document.getElementById("sleeveShort").style.WebkitAnimation = "imageselection 0.6s ease infinite";
 	}
-	if(sessionStorage.len.indexOf('sleeveMedium')>=0){
+	if(sessionStorage.len.indexOf('sMedium')>=0){
 		sleeveMedium = true;
-		sleeveLength = "sleeveMedium"
+		sleeveLength = "sMedium"
 		document.getElementById("sleeveMedium").style.WebkitAnimation = "imageselection 0.6s ease infinite";
 	}
-	if(sessionStorage.len.indexOf('sleeveLong')>=0){
+	if(sessionStorage.len.indexOf('sLong')>=0){
 		sleeveLong = true;
-		sleeveLength = "sleeveLong"
+		sleeveLength = "sLong"
 		document.getElementById("sleeveLong").style.WebkitAnimation = "imageselection 0.6s ease infinite";
 	}
 }
@@ -132,7 +130,7 @@ function chooseDressLength(val) {
 		if(dressShort){
 			dressMedium = false
 			dressLong = false
-			dressLength = "dressShort"
+			dressLength = "tShort" 
 			document.getElementById("dressShort").style.WebkitAnimation = "imageselection 0.6s ease infinite";
 		}
 	}
@@ -141,7 +139,7 @@ function chooseDressLength(val) {
 		if(dressMedium){
 			dressShort = false
 dressLong = false
-			dressLength = "dressMedium"
+			dressLength = "tMedium"
 			document.getElementById("dressMedium").style.WebkitAnimation = "imageselection 0.6s ease infinite";
 		}
 	}
@@ -150,7 +148,7 @@ dressLong = false
 		if(dressLong){
 			dressShort = false
 dressMedium = false
-			dressLength = "dressLong"
+			dressLength = "tLong"
 			document.getElementById("dressLong").style.WebkitAnimation = "imageselection 0.6s ease infinite";
 		}
 	}
@@ -167,7 +165,7 @@ function chooseSleeve(val) {
 		if(sleeveShort){
 			sleeveMedium = false
 			sleeveLong = false
-			sleeveLength = "sleeveShort"
+			sleeveLength = "sShort"
 			document.getElementById("sleeveShort").style.WebkitAnimation = "imageselection 0.6s ease infinite";
 		}
 	}
@@ -176,7 +174,7 @@ function chooseSleeve(val) {
 		if(sleeveMedium){
 			sleeveShort = false
 			sleeveLong = false
-			sleeveLength = "sleeveMedium"
+			sleeveLength = "sMedium"
 			document.getElementById("sleeveMedium").style.WebkitAnimation = "imageselection 0.6s ease infinite";
 		}
 	}
@@ -185,7 +183,7 @@ function chooseSleeve(val) {
 		if(sleeveLong){
 			sleeveShort = false
 			sleeveMedium = false
-			sleeveLength = "sleeveLong"
+			sleeveLength = "sLong"
 			document.getElementById("sleeveLong").style.WebkitAnimation = "imageselection 0.6s ease infinite";
 		}
 	}
