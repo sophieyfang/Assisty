@@ -549,7 +549,6 @@ li {
 	height: 49vw;
 	z-index: -1;
 	margin-left: 5vw;
-	display: inline-block;
 }
 
 .prodimg {
@@ -559,9 +558,15 @@ li {
 }
 
 .prodname {
-	width: 10vw;
+	width: 18vw;
 	font-family: courier-std, mono;
 	text-transform: lowercase;
 	font-size: 1.3vw;
 	background-color: red;
+}
+
+.product > a {
+	display: inline-block;
+	width: 10vw;
+	vertical-align: top;
 }
