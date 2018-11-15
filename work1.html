@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>For You</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://use.typekit.net/znk3xkz.css">
+</head>
+<body>
+
+<!-- header -->
+<div id="mySidenav" class="sidenav">
+  	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	<a href="index.html">Home</a>
+	<a href="about.html">Why Us</a>
+	<a href="gift.html">Gift it</a>
+	<a href="https://www.etsy.com">Shop</a>
+</div>
+
+<div class="head">
+	<span onclick="openNav()">+</span>
+	<a href="you.html">For You</a>
+</div>
+<!-- header -->
+
+<!-- questions -->
+<div class="style1">
+	<p>Which style do you prefer?</p>
+	<figure>
+		<img src="images/chic1.png" width="100%" class="imgselection2" id="chic" onclick="chooseWorkStyle1('chic')">
+	</figure>
+	<figure>
+		<img src="images/vintage1.png" width="100%" class="imgselection2" id="vintage" onclick="chooseWorkStyle1('vintage')">
+	</figure>
+	<figure>
+		<img src="images/business1.png" width="100%" class="imgselection2" id="business" onclick="chooseWorkStyle1('business')">
+	</figure>
+	<figure>
+		<img src="images/minimalist1.png" width="100%" class="imgselection2" id="minimalist" onclick="chooseWorkStyle1('minimalist')">
+	</figure>
+	<br>
+	<button class="stylebutton" onclick="addWorkStyle1()">next &rsaquo;</button>
+</div>
+<!-- questions -->
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "16vw";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+
+chic = false
+vintage = false
+business = false
+minimalist = false
+function chooseWorkStyle1(val) {
+	if(val=='chic'){
+		chic = !chic
+		if(chic) {
+			document.getElementById("chic").style.border = "0.3vw solid black";
+			document.getElementById("chic").style.boxSizing = "border-box";
+		} else {
+			document.getElementById("chic").style.border = "";
+		}
+	}
+	if(val=='vintage'){
+		vintage = !vintage
+		if(vintage) {
+			document.getElementById("vintage").style.border = "0.3vw solid black";
+			document.getElementById("vintage").style.boxSizing = "border-box";
+		} else {
+			document.getElementById("vintage").style.border = "";
+		}
+	}
+		if(val=='business'){
+		business = !business
+		if(business) {
+			document.getElementById("business").style.border = "0.3vw solid black";
+			document.getElementById("business").style.boxSizing = "border-box";
+		} else {
+			document.getElementById("business").style.border = "";
+		}
+	}
+		if(val=='minimalist'){
+		minimalist = !minimalist
+		if(minimalist) {
+			document.getElementById("minimalist").style.border = "0.3vw solid black";
+			document.getElementById("minimalist").style.boxSizing = "border-box";;
+		} else {
+			document.getElementById("minimalist").style.border = "";
+		}
+	}
+}
+
+function addWorkStyle1(){
+	var styles = []
+	if(minimalist)
+		styles.push("minimalist")
+	if(business)
+		styles.push("business")
+	if(vintage)
+		styles.push("vintage")
+	if(chic)
+		styles.push("chic")
+	if(typeof(Storage) !== "undefined") {
+		sessionStorage.style1 = null
+		if(styles.length!=0)
+        	sessionStorage.style1 = styles.join();
+    }
+    console.log(sessionStorage.style1);
+  	//window.open("results.html", "_self");
+}
+</script>
+</body>
+</html>

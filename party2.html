@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>For You</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://use.typekit.net/znk3xkz.css">
+</head>
+<body>
+
+<!-- header -->
+<div id="mySidenav" class="sidenav">
+  	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	<a href="index.html">Home</a>
+	<a href="about.html">Why Us</a>
+	<a href="gift.html">Gift it</a>
+	<a href="https://www.etsy.com">Shop</a>
+</div>
+
+<div class="head">
+	<span onclick="openNav()">+</span>
+	<a href="you.html">For You</a>
+</div>
+<!-- header -->
+
+<!-- questions -->
+<div class="style1">
+	<p>Which dress do you prefer?</p>
+	<figure>
+		<img src="images/rocker2.png" width="100%" class="imgselection2" id="rocker" onclick="choosePartyStyle2('rocker')">
+	</figure>
+	<figure>
+		<img src="images/sophisticated2.png" width="100%" class="imgselection2" id="sophisticated" onclick="choosePartyStyle2('sophisticated')">
+	</figure>
+	<figure>
+		<img src="images/edgy2.png" width="100%" class="imgselection2" id="edgy" onclick="choosePartyStyle2('edgy')">
+	</figure>
+	<figure>
+		<img src="images/sexy2.png" width="100%" class="imgselection2" id="sexy" onclick="choosePartyStyle2('sexy')">
+	</figure>
+	<br>
+	<button class="stylebutton" onclick="addPartyStyle2()" >next &rsaquo;</button>
+</div>
+<!-- questions -->
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "16vw";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+
+rocker = false
+sexy = false
+edgy = false
+sophisticated = false
+function choosePartyStyle2(val) {
+	if(val=='rocker'){
+		rocker = !rocker
+		if(rocker) {
+			document.getElementById("rocker").style.border = "0.3vw solid black";
+			document.getElementById("rocker").style.boxSizing = "border-box";
+		} else {
+			document.getElementById("rocker").style.border = "";
+		}
+	}
+	if(val=='sophisticated'){
+		sophisticated = !sophisticated
+		if(sophisticated) {
+			document.getElementById("sophisticated").style.border = "0.3vw solid black";
+			document.getElementById("sophisticated").style.boxSizing = "border-box";;
+		} else {
+			document.getElementById("sophisticated").style.border = "";
+		}
+	}
+	if(val=='edgy'){
+		edgy = !edgy
+		if(edgy) {
+			document.getElementById("edgy").style.border = "0.3vw solid black";
+			document.getElementById("edgy").style.boxSizing = "border-box";
+		} else {
+			document.getElementById("edgy").style.border = "";
+		}
+	}
+	if(val=='sexy'){
+		sexy = !sexy
+		if(sexy) {
+			document.getElementById("sexy").style.border = "0.3vw solid black";
+			document.getElementById("sexy").style.boxSizing = "border-box";
+		} else {
+			document.getElementById("sexy").style.border = "";
+		}
+	}
+
+}
+
+function addPartyStyle2(){
+	var styles = []
+	if(rocker)
+		styles.push("rocker")
+	if(edgy)
+		styles.push("edgy")
+	if(sexy)
+		styles.push("sexy")
+	if(sophisticated)
+		styles.push("sophisticated")
+	if(typeof(Storage) !== "undefined") {
+		sessionStorage.style4 = null
+		if(styles.length!=0)
+        	sessionStorage.style4 = styles.join();
+    }
+    console.log(sessionStorage.style4);
+  	window.open("you3.html", "_self");
+}
+</script>
+</body>
+</html>

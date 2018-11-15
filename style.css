@@ -467,7 +467,7 @@ h2 {
 }
 
 .imgselection2:hover {
-	border: 0.2vw solid transparent;
+	border: 0.3vw solid black;
 	box-sizing: border-box;
 	/*transition: 0.3s;*/
 }
