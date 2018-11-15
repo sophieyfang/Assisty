@@ -556,3 +556,7 @@ li {
 	width: 20%;
 	display: inline-block;
 }
+
+.prodname {
+	width: 10vw
+}
