@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>For You</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://use.typekit.net/znk3xkz.css">
+</head>
+<body>
+
+<!-- header -->
+<div id="mySidenav" class="sidenav">
+  	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	<a href="index.html">Home</a>
+	<a href="about.html">Why Us</a>
+	<a href="gift.html">Gift it</a>
+	<a href="https://www.etsy.com">Shop</a>
+</div>
+
+<div class="head">
+	<span onclick="openNav()">+</span>
+	<a href="you.html">For You</a>
+</div>
+<!-- header -->
+
+<!-- questions -->
+<div class="youquestion4">
+	<p>What is the occasion?</p>
+	<figure>
+		<img src="images/hangout.png" width="100%" class="imgselection"  id="hangout" onclick="chooseOccasion('hangout')">
+		<figcaption>hang out</figcaption>
+	</figure>
+	<figure>
+		<img src="images/work.png" width="30%" class="imgselection" id="work" onclick="chooseOccasion('work')">
+		<figcaption>work</figcaption>
+	</figure>
+	<figure>
+		<img src="images/date.png" width="110%" class="imgselection" id="date" onclick="chooseOccasion('date')">
+		<figcaption>date</figcaption>
+	</figure>
+	<figure>
+		<img src="images/party.png" width="90%" class="imgselection" id="party" onclick="chooseOccasion('party')">
+		<figcaption>party</figcaption>
+	</figure>
+	<figure>
+		<img src="images/vacation.png" width="110%" class="imgselection" id="vacation" onclick="chooseOccasion('vacation')">
+		<figcaption>vacation</figcaption>
+	</figure>
+</div>
+<!-- questions -->
+
+<script>
+	function openNav() {
+    document.getElementById("mySidenav").style.width = "16vw";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+
+hangout = false
+work = false
+date = false
+minimalist = false
+function chooseOccasion(val) {
+	if(val=='hangout'){
+		hangout = !hangout
+		window.open("hangout1.html", "_self");
+	}
+	if(val=='work'){
+		work = !work
+		window.open("work1.html", "_self");
+	}
+	if(val=='date'){
+		date = !date
+		window.open("date1.html", "_self");
+	}
+	if(val=='party'){
+		party = !party
+		window.open("party1.html", "_self");
+	}
+	if(val=='vacation'){
+		vacation = !vacation
+		window.open("vacation1.html", "_self");
+	}
+}
+
+function addOccasion(){
+	var occasion = []
+	if(party)
+		occasion.push("party")
+	if(date)
+		occasion.push("date")
+	if(work)
+		occasion.push("work")
+	if(hangout)
+		occasion.push("hangout")
+	if(vacation)
+		occasion.push("vacation")
+	if(typeof(Storage) !== "undefined") {
+		sessionStorage.occasion = null
+		if(occasion.length!=0)
+        	sessionStorage.occasion = occasion.join();
+    }
+    console.log(sessionStorage.occasion);
+  	//window.open("results.html", "_self");
+}
+
+</script>
+</body>
+</html>

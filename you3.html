@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>For You</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://use.typekit.net/znk3xkz.css">
+</head>
+<body>
+
+<!-- header -->
+<div id="mySidenav" class="sidenav">
+  	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	<a href="index.html">Home</a>
+	<a href="about.html">Why Us</a>
+	<a href="gift.html">Gift it</a>
+	<a href="https://www.etsy.com">Shop</a>
+</div>
+
+<div class="head">
+	<span onclick="openNav()">+</span>
+	<a href="you.html">For You</a>
+</div>
+<!-- header -->
+
+<!-- questions -->
+<div class="youquestion3">
+	<p>Which colors do you like?</p>
+	<figure>
+		<img src="images/yellow.png" class="imgselection" id="yellow" width="100%" onclick="chooseColor('yellow')">
+		<!-- <figcaption>yellow</figcaption> -->
+	</figure>
+	<figure>
+		<img src="images/green.png" class="imgselection" id="green" width="100%" onclick="chooseColor('green')">
+		<!-- <figcaption>green</figcaption> -->
+	</figure>
+	<figure>
+		<img src="images/blue.png" class="imgselection" id="blue" width="100%" onclick="chooseColor('blue')">
+		<!-- <figcaption>blue</figcaption> -->
+	</figure><br>
+	<figure>
+		<img src="images/pink.png" class="imgselection" id="pink" width="100%" onclick="chooseColor('pink')">
+		<!-- <figcaption>pink</figcaption> -->
+	</figure>
+	<figure>
+		<img src="images/red.png" class="imgselection" id="red" width="100%" onclick="chooseColor('red')">
+		<!-- <figcaption>red</figcaption> -->
+	</figure>
+	<figure>
+		<img src="images/orange.png" class="imgselection" id="orange" width="100%" onclick="chooseColor('orange')">
+		<!-- <figcaption>orange</figcaption> -->
+	</figure><br>
+	<figure>
+		<img src="images/black.png" class="imgselection" id="black" width="100%" onclick="chooseColor('black')">
+		<!-- <figcaption>black</figcaption> -->
+	</figure>
+	<figure>
+		<img src="images/white.png" class="imgselection" id="white" width="100%" onclick="chooseColor('white')">
+		<!-- <figcaption>white</figcaption> -->
+	</figure>
+	<figure>
+		<img src="images/grey.png" class="imgselection" id="grey" width="100%" onclick="chooseColor('grey')">
+		<!-- <figcaption>grey</figcaption> -->
+	</figure><br>
+	<button class="stylebuttoncolor" onclick="getColors()">next &rsaquo;</button>
+</div>
+
+
+<!-- questions -->
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "16vw";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+
+function getColors(){
+	var colors = []
+	if(green)
+		colors.push("green")
+	if(yellow)
+		colors.push("yellow")
+	if(pink)
+		colors.push("pink")
+	if(blue)
+		colors.push("blue")
+	if(grey)
+		colors.push("grey")
+	if(orange)
+		colors.push("orange")
+	if(red)
+		colors.push("red")
+	if(black)
+		colors.push("black")
+	if(white)
+		colors.push("white")
+	colors = colors.join();
+	if(typeof(Storage) !== "undefined") {
+        sessionStorage.colors = colors;
+    } else {
+        document.getElementByClass("youquestion3").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+    console.log(sessionStorage.colors);
+  	window.open("you4.html", "_self");
+	
+}
+
+yellow = false
+green = false
+black = false
+white = false
+blue=false
+grey =false
+orange =false
+red = false
+pink = false
+function chooseColor(val) {
+	if(val=='yellow'){
+		yellow = !yellow
+		if(yellow)
+			document.getElementById("yellow").style.boxShadow = "10px 20px 30px lightblue";
+		else {
+			document.getElementById("yellow").style.boxShadow = "";
+		}
+	}
+	if(val=='green'){
+		green = !green
+		if(green)
+			document.getElementById("green").style.boxShadow = "10px 20px 30px lightblue";
+		else {
+			document.getElementById("green").style.boxShadow = "";
+		}
+	}
+		if(val=='black'){
+		black = !black
+		if(black)
+			document.getElementById("black").style.boxShadow = "10px 20px 30px lightblue";
+		else {
+			document.getElementById("black").style.boxShadow = "";
+		}
+	}
+		if(val=='red'){
+		red = !red
+		if(red)
+			document.getElementById("red").style.boxShadow = "10px 20px 30px lightblue";
+		else {
+			document.getElementById("red").style.boxShadow = "";
+		}
+	}
+		if(val=='pink'){
+		pink = !pink
+		if(pink)
+			document.getElementById("pink").style.boxShadow = "10px 20px 30px lightblue";
+		else {
+			document.getElementById("pink").style.boxShadow = "";
+		}
+	}
+
+			if(val=='white'){
+		white = !white
+		if(white)
+			document.getElementById("white").style.boxShadow = "10px 20px 30px lightblue";
+		else {
+			document.getElementById("white").style.boxShadow = "";
+		}
+	}
+			if(val=='grey'){
+		grey = !grey
+		if(grey)
+			document.getElementById("grey").style.boxShadow = "10px 20px 30px lightblue";
+		else {
+			document.getElementById("grey").style.boxShadow = "";
+		}
+	}
+			if(val=='blue'){
+		blue = !blue
+		if(blue)
+			document.getElementById("blue").style.boxShadow = "10px 20px 30px lightblue";
+		else {
+			document.getElementById("blue").style.boxShadow = "";
+		}
+	}
+				if(val=='orange'){
+		orange = !orange
+		if(orange)
+			document.getElementById("orange").style.boxShadow = "10px 20px 30px lightblue";
+		else {
+			document.getElementById("orange").style.boxShadow = "";
+		}
+	}
+}
+
+</script>
+</body>
+</html>

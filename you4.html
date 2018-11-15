@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>For You</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://use.typekit.net/znk3xkz.css">
+</head>
+<body>
+
+<!-- header -->
+<div id="mySidenav" class="sidenav">
+  	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	<a href="index.html">Home</a>
+	<a href="about.html">Why Us</a>
+	<a href="gift.html">Gift it</a>
+	<a href="https://www.etsy.com">Shop</a>
+</div>
+
+<div class="head">
+	<span onclick="openNav()">+</span>
+	<a href="you.html">For You</a>
+</div>
+<!-- header -->
+
+<!-- questions -->
+<div class="youquestion4">
+	<p>How would you like your clothes to fit?</p>
+	<figure>
+		<img src="images/tight.png" width="100%" class="imgselection" onclick="chooseFit('yellow')">
+		<figcaption>tight</figcaption>
+	</figure>
+	<figure>
+		<img src="images/straight.png" width="100%" class="imgselection" onclick="chooseFit('yellow')">
+		<figcaption>straight</figcaption>
+	</figure>
+	<figure>
+		<img src="images/fitted.png" width="100%" class="imgselection" onclick="chooseFit('yellow')">
+		<figcaption>fitted</figcaption>
+	</figure>
+	<figure>
+		<img src="images/loose.png" width="100%" class="imgselection" onclick="chooseFit('yellow')">
+		<figcaption>loose</figcaption>
+	</figure>
+	<figure>
+		<img src="images/oversized.png" width="100%" class="imgselection" onclick="chooseFit('yellow')">
+		<figcaption>oversized</figcaption>
+	</figure>
+</div>
+<!-- questions -->
+
+<script>
+	function openNav() {
+    document.getElementById("mySidenav").style.width = "16vw";
+}
+function chooseFit(val) {
+	if(typeof(Storage) !== "undefined") {
+        sessionStorage.fit = val;
+    } else {
+        document.getElementByClass("youquestion4").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+    console.log(sessionStorage.fit);
+  	window.open("you5.html", "_self");
+}
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+</body>
+</html>

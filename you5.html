@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>For You</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://use.typekit.net/znk3xkz.css">
+</head>
+<body>
+
+<!-- header -->
+<div id="mySidenav" class="sidenav">
+  	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	<a href="index.html">Home</a>
+	<a href="about.html">Why Us</a>
+	<a href="gift.html">Gift it</a>
+	<a href="https://www.etsy.com">Shop</a>
+</div>
+
+<div class="head">
+	<span onclick="openNav()">+</span>
+	<a href="you.html">For You</a>
+</div>
+<!-- header -->
+
+<!-- questions -->
+<div class="youquestion5">
+	<p>Which part of your body do you want to show off?</p>
+	<figure>
+		<img src="images/decolletage.png" width="100%" class="imgselection" id="decolletage" onclick="chooseShowOff('decolletage')">
+		<figcaption>decolletage</figcaption>
+	</figure>
+	<figure>
+		<img src="images/back.png" width="100%" class="imgselection" id="back" onclick="chooseShowOff('back')">
+		<figcaption>back</figcaption>
+	</figure>
+	<figure>
+		<img src="images/shoulders.png" width="100%" class="imgselection" id="shoulders" onclick="chooseShowOff('shoulders')">
+		<figcaption>shoulders</figcaption>
+	</figure>
+	<figure>
+		<img src="images/abs.png" width="85%" class="imgselection" id="abs" onclick="chooseShowOff('abs')">
+		<figcaption>abs</figcaption>
+	</figure>
+	<br>
+	<button class="stylebutton" onclick="addShowOff()" >next &rsaquo;</button>
+</div>
+<!-- questions -->
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "16vw";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+
+decolletage = false
+back = false
+shoulders = false
+abs = false
+function chooseShowOff(val) {
+	if(val=='decolletage'){
+		decolletage = !decolletage
+		if(decolletage) {
+			document.getElementById("decolletage").style.WebkitAnimation = "imageselection 0.6s ease infinite";
+		} else {
+			document.getElementById("decolletage").style.WebkitAnimation = "";
+		}
+	}
+	if(val=='abs'){
+		abs = !abs
+		if(abs) {
+			document.getElementById("abs").style.WebkitAnimation = "imageselection 0.6s ease infinite";
+		} else {
+			document.getElementById("abs").style.WebkitAnimation = "";
+		}
+	}
+	if(val=='shoulders'){
+		shoulders = !shoulders
+		if(shoulders) {
+			document.getElementById("shoulders").style.WebkitAnimation = "imageselection 0.6s ease infinite";
+		} else {
+			document.getElementById("shoulders").style.WebkitAnimation = "";
+		}
+	}
+	if(val=='back'){
+		back = !back
+		if(back) {
+			document.getElementById("back").style.WebkitAnimation = "imageselection 0.6s ease infinite";
+		} else {
+			document.getElementById("back").style.WebkitAnimation = "";
+		}
+	}
+
+}
+
+function addShowOff(){
+	var styles = []
+	if(decolletage)
+		styles.push("decolletage")
+	if(shoulders)
+		styles.push("shoulders")
+	if(back)
+		styles.push("back")
+	if(abs)
+		styles.push("abs")
+	if(typeof(Storage) !== "undefined") {
+		sessionStorage.style4 = null
+		if(styles.length!=0)
+        	sessionStorage.style4 = styles.join();
+    }
+    console.log(sessionStorage.style4);
+  	window.open("you6.html", "_self");
+}
+</script>
+</body>
+</html>

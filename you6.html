@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>For You</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://use.typekit.net/znk3xkz.css">
+</head>
+<body>
+
+<!-- header -->
+<div id="mySidenav" class="sidenav">
+  	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	<a href="index.html">Home</a>
+	<a href="about.html">Why Us</a>
+	<a href="gift.html">Gift it</a>
+	<a href="https://www.etsy.com">Shop</a>
+</div>
+
+<div class="head">
+	<span onclick="openNav()">+</span>
+	<a href="you.html">For You</a>
+</div>
+<!-- header -->
+
+<!-- questions -->
+<div class="youquestion6">
+	<p>What lengths do you prefer?</p>
+	<figure>
+		<img src="images/length3.png" width="70%" class="imgselection" onclick="chooseDressLength('short')" id="dressShort">
+		<figcaption>short</figcaption>
+	</figure>
+	<figure>
+		<img src="images/length2.png" width="70%" class="imgselection" onclick="chooseDressLength('medium')" id="dressMedium">
+		<figcaption>medium</figcaption>
+	</figure>
+	<figure>
+		<img src="images/length1.png" width="70%" class="imgselection" onclick="chooseDressLength('long')" id="dressLong">
+		<figcaption>long</figcaption>
+	</figure>
+	<br>
+	<figure>
+		<img src="images/length4.png" width="100%" class="imgselection" onclick="chooseSleeve('short')" id="sleeveShort">
+		<figcaption>short</figcaption>
+	</figure>
+	<figure>
+		<img src="images/length5.png" width="100%" class="imgselection" onclick="chooseSleeve('medium')" id="sleeveMedium">
+		<figcaption>medium</figcaption>
+	</figure>
+	<figure>
+		<img src="images/length6.png" width="100%" class="imgselection" onclick="chooseSleeve('long')" id="sleeveLong">
+		<figcaption>long</figcaption>
+	</figure>
+	<br>
+	<button class="stylebutton" onclick="getLength()">done &rsaquo;</button>
+</div>
+<!-- questions -->
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "16vw";
+}
+function getLength(){
+	len = []
+	if(dressLength!=null)
+		len.push(dressLength)
+	if(sleeveLength!=null)
+		len.push(sleeveLength)
+	if(typeof(Storage) !== "undefined") {
+		sessionStorage.len = null
+		if(len.length!=0)
+        	sessionStorage.len = len.join();
+    } else {
+        document.getElementByClass("youquestion6").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+    console.log(sessionStorage.len);
+  	window.open("results.html", "_self");
+	
+}
+dressLength = null
+dressShort = false
+dressMedium = false
+dressLong = false
+function chooseDressLength(val) {
+	dressLength = null
+	document.getElementById("dressShort").style.WebkitAnimation= "";
+	document.getElementById("dressMedium").style.WebkitAnimation= "";
+	document.getElementById("dressLong").style.WebkitAnimation= "";
+	if(val=="short"){
+		dressShort = !dressShort
+		if(dressShort){
+			dressMedium = false
+			dressLong = false
+			dressLength = "dressShort"
+			document.getElementById("dressShort").style.WebkitAnimation = "imageselection 0.6s ease infinite";
+		}
+	}
+	if(val=="medium"){
+		dressMedium = !dressMedium
+		if(dressMedium){
+			dressShort = false
+dressLong = false
+			dressLength = "dressMedium"
+			document.getElementById("dressMedium").style.WebkitAnimation = "imageselection 0.6s ease infinite";
+		}
+	}
+	if(val=="long"){
+		dressLong=!dressLong
+		if(dressLong){
+			dressShort = false
+dressMedium = false
+			dressLength = "dressLong"
+			document.getElementById("dressLong").style.WebkitAnimation = "imageselection 0.6s ease infinite";
+		}
+	}
+}
+sleeveLength = null
+sleeveShort = false
+sleeveMedium = false
+sleeveLong = false
+function chooseSleeve(val) {
+	sleeveLength = null
+	document.getElementById("sleeveShort").style.WebkitAnimation = "";
+	document.getElementById("sleeveMedium").style.WebkitAnimation = "";
+	document.getElementById("sleeveLong").style.WebkitAnimation = "";
+
+	if(val=="short"){
+		sleeveShort = !sleeveShort
+		if(sleeveShort){
+			sleeveMedium = false
+			sleeveLong = false
+			sleeveLength = "sleeveShort"
+			document.getElementById("sleeveShort").style.WebkitAnimation = "imageselection 0.6s ease infinite";
+		}
+	}
+	if(val=="medium"){
+		sleeveMedium = !sleeveMedium
+		if(sleeveMedium){
+			sleeveShort = false
+			sleeveLong = false
+			sleeveLength = "sleeveMedium"
+			document.getElementById("sleeveMedium").style.WebkitAnimation = "imageselection 0.6s ease infinite";
+		}
+	}
+	if(val=="long"){
+		sleeveLong=!sleeveLong
+		if(sleeveLong){
+			sleeveShort = false
+			sleeveMedium = false
+			sleeveLength = "sleeveLong"
+			document.getElementById("sleeveLong").style.WebkitAnimation = "imageselection 0.6s ease infinite";
+		}
+	}
+}
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+</body>
+</html>
