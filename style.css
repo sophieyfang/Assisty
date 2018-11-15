@@ -520,10 +520,6 @@ li {
 .indexfooter {
 	margin-top: 56vw;
 }
-
-.resultsfooter {
-	margin-top: 100vw;
-}
 /*footer*/
 
 .results {
@@ -547,14 +543,27 @@ li {
 	margin-top: 20vw;
 	width: 90vw;
 	height: 49vw;
-	z-index: -1;
-	margin-left: 5vw;
+	margin-left: 8vw;
+}
+
+.prodimg {
+	display: inline-block;
+	width: 70%;
+	z-index: 1;
+	cursor: pointer;
+}
+
+.container > a {
+	display: inline-block;
+	width: 30vw;
+	vertical-align: top;
 }
 
 .container p {
-	position: absolute;
-	width: 20%;
-	display: inline-block;
+	width: 20vw;
+	font-family: courier-std, mono;
+	text-transform: lowercase;
+	font-size: 1vw;
 }
 
 .prodname {
@@ -562,11 +571,4 @@ li {
 	font-family: courier-std, mono;
 	text-transform: lowercase;
 	font-size: 1.3vw;
-	background-color: red;
-}
-
-.product > a {
-	display: inline-block;
-	width: 10vw;
-	vertical-align: top;
 }
