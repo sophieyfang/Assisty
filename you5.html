@@ -63,7 +63,7 @@ back = false
 shoulders = false
 abs = false
 if(sessionStorage.showoff!=null){
-	if(sessionStorage.showoff.indexOf('decolletage')>=0){
+	if(sessionStorage.showoff.indexOf('chest')>=0){
 		decolletage = true;
 		document.getElementById("decolletage").style.WebkitAnimation = "imageselection 0.6s ease infinite";
 	}
@@ -71,7 +71,7 @@ if(sessionStorage.showoff!=null){
 		back = true;
 		document.getElementById("back").style.WebkitAnimation = "imageselection 0.6s ease infinite";
 	}
-	if(sessionStorage.showoff.indexOf('shoulders')>=0){
+	if(sessionStorage.showoff.indexOf('shoulder')>=0){
 		shoulders = true;
 		document.getElementById("shoulders").style.WebkitAnimation = "imageselection 0.6s ease infinite";
 	}
@@ -119,9 +119,9 @@ function chooseShowOff(val) {
 function addShowOff(){
 	var showoff = []
 	if(decolletage)
-		showoff.push("decolletage")
+		showoff.push("chest")
 	if(shoulders)
-		showoff.push("shoulders")
+		showoff.push("shoulder")
 	if(back)
 		showoff.push("back")
 	if(abs)
