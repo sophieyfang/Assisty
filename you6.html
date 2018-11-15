@@ -25,6 +25,7 @@
 
 <!-- questions -->
 <div class="youquestion6">
+	<p>Question 11 of 11</p>
 	<p>What lengths do you prefer?</p>
 	<figure>
 		<img src="images/length3.png" width="70%" class="imgselection" onclick="chooseDressLength('short')" id="dressShort">
@@ -52,6 +53,7 @@
 		<figcaption>long</figcaption>
 	</figure>
 	<br>
+	<a href="you5.html"><button class="stylebutton">back &rsaquo;</button></a>
 	<button class="stylebutton" onclick="getLength()">done &rsaquo;</button>
 </div>
 <!-- questions -->
@@ -67,9 +69,9 @@ function getLength(){
 	if(sleeveLength!=null)
 		len.push(sleeveLength)
 	if(typeof(Storage) !== "undefined") {
-		sessionStorage.len = null
+		//sessionStorage.len = null
 		if(len.length!=0)
-        	sessionStorage.len = len.join();
+        	sessionStorage.len = len;
     } else {
         document.getElementByClass("youquestion6").innerHTML = "Sorry, your browser does not support web storage...";
     }
@@ -81,6 +83,45 @@ dressLength = null
 dressShort = false
 dressMedium = false
 dressLong = false
+sleeveLength = null
+sleeveShort = false
+sleeveMedium = false
+sleeveLong = false
+if(sessionStorage.len!=null){
+	console.log("still here");
+	console.log(sessionStorage.len);
+	if(sessionStorage.len.indexOf('dressShort')>=0){
+		dressShort = true;
+		dressLength = "dressShort"
+		document.getElementById("dressShort").style.WebkitAnimation = "imageselection 0.6s ease infinite";
+	}
+	if(sessionStorage.len.indexOf('dressMedium')>=0){
+		dressMedium = true;
+		dressLength = "dressMedium"
+		document.getElementById("dressMedium").style.WebkitAnimation = "imageselection 0.6s ease infinite";
+	}
+	if(sessionStorage.len.indexOf('dressLong')>=0){
+		dressLong = true;
+		dressLength = "dressLong"
+		document.getElementById("dressLong").style.WebkitAnimation = "imageselection 0.6s ease infinite";
+	}
+	if(sessionStorage.len.indexOf('sleeveShort')>=0){
+		sleeveShort = true;
+		sleeveLength = "sleeveShort"
+		document.getElementById("sleeveShort").style.WebkitAnimation = "imageselection 0.6s ease infinite";
+	}
+	if(sessionStorage.len.indexOf('sleeveMedium')>=0){
+		sleeveMedium = true;
+		sleeveLength = "sleeveMedium"
+		document.getElementById("sleeveMedium").style.WebkitAnimation = "imageselection 0.6s ease infinite";
+	}
+	if(sessionStorage.len.indexOf('sleeveLong')>=0){
+		sleeveLong = true;
+		sleeveLength = "sleeveLong"
+		document.getElementById("sleeveLong").style.WebkitAnimation = "imageselection 0.6s ease infinite";
+	}
+}
+
 function chooseDressLength(val) {
 	dressLength = null
 	document.getElementById("dressShort").style.WebkitAnimation= "";
@@ -114,10 +155,7 @@ dressMedium = false
 		}
 	}
 }
-sleeveLength = null
-sleeveShort = false
-sleeveMedium = false
-sleeveLong = false
+
 function chooseSleeve(val) {
 	sleeveLength = null
 	document.getElementById("sleeveShort").style.WebkitAnimation = "";

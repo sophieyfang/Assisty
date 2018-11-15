@@ -55,21 +55,39 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
 
-tags = ""+sessionStorage.showooff+","+sessionStorage.color+","+sessionStorage.fit+","+sessionStorage.occasion+","+sessionStorage.clothes+","+sessionStorage.category;
-console.log(tags);
-var myurl = "http://localhost:9200/items/_search?q=tags:"+tags;
-// json file url
-$.getJSON( myurl, function( data ) {
-  var items = [];
-  console.log(data.hits.hits)
-  $.each( data.hits.hits, function( index, value ) {
+styles = sessionStorage.party1+","+sessionStorage.party2;
+console.log(styles)
+othertags = sessionStorage.colors+","+sessionStorage.len+","+sessionStorage.showoff+","+sessionStorage.fit;
+console.log(othertags)
+var data = {
+  "query": {
+    "bool": {
+      "must": [
+        { "match": { "othertags": othertags } },
+        { "match": { "occastion": sessionStorage.occasion } },
+        { "match": { "primaryStyleTag": styles } }
+      ]
+    }
+  }
+};
+console.log(data);
+$.ajax({ 
+    type: 'POST', 
+    url: 'https://d5f2adfb8c7e4bf5a2cc02fc054a74ac.us-east-1.aws.found.io:9243/assisty/_search?pretty=true', 
+	data: JSON.stringify(data),
+  dataType : 'json',
+  contentType: 'application/json',
+    headers: {
+    	"Authorization": "Basic " + btoa('elastic' + ":" + '3K37pef3Y4YCu9P6PGT1ZRbH')
+  	},
+    success: function (data) { 
+
+          $.each( data.hits.hits, function( index, value ) {
   	console.log(value._source);
   			$(".container").append("<a href=" + value._source.itemurl + ">" + "<img class='prodimg' src=" + value._source.imageUrl + "><p class='prodname'>" + value._source.name + "</p><p class='seller'>" + value._source.sellerName + "</p><p class='price'>" + value._source.price + "</p></a>");
-  });
- 
+ 		 });
+    }
 });
-
-
 
 </script>
 </body>

@@ -25,6 +25,7 @@
 
 <!-- questions -->
 <div class="youquestion4">
+	<p>Question 5 of 11</p>
 	<p>What is the occasion?</p>
 	<figure>
 		<img src="images/hangout.png" width="100%" class="imgselection"  id="hangout" onclick="chooseOccasion('hangout')">
@@ -46,6 +47,8 @@
 		<img src="images/vacation.png" width="110%" class="imgselection" id="vacation" onclick="chooseOccasion('vacation')">
 		<figcaption>vacation</figcaption>
 	</figure>
+	<br>
+	<a href="you1.html"><button class="stylebutton">back &rsaquo;</button></a>
 </div>
 <!-- questions -->
 
@@ -58,52 +61,23 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
 
-hangout = false
-work = false
-date = false
-minimalist = false
 function chooseOccasion(val) {
+	sessionStorage.occasion = val;
 	if(val=='hangout'){
-		hangout = !hangout
 		window.open("hangout1.html", "_self");
 	}
 	if(val=='work'){
-		work = !work
 		window.open("work1.html", "_self");
 	}
 	if(val=='date'){
-		date = !date
-		window.open("date1.html", "_self");
+		//window.open("date1.html", "_self");
 	}
 	if(val=='party'){
-		party = !party
 		window.open("party1.html", "_self");
 	}
 	if(val=='vacation'){
-		vacation = !vacation
 		window.open("vacation1.html", "_self");
 	}
-}
-
-function addOccasion(){
-	var occasion = []
-	if(party)
-		occasion.push("party")
-	if(date)
-		occasion.push("date")
-	if(work)
-		occasion.push("work")
-	if(hangout)
-		occasion.push("hangout")
-	if(vacation)
-		occasion.push("vacation")
-	if(typeof(Storage) !== "undefined") {
-		sessionStorage.occasion = null
-		if(occasion.length!=0)
-        	sessionStorage.occasion = occasion.join();
-    }
-    console.log(sessionStorage.occasion);
-  	//window.open("results.html", "_self");
 }
 
 </script>

@@ -25,6 +25,7 @@
 
 <!-- questions -->
 <div class="style1">
+	<p>Question 7 of 11</p>
 	<p>Which dress do you prefer?</p>
 	<figure>
 		<img src="images/rocker2.png" width="100%" class="imgselection2" id="rocker" onclick="choosePartyStyle2('rocker')">
@@ -39,6 +40,7 @@
 		<img src="images/sexy2.png" width="100%" class="imgselection2" id="sexy" onclick="choosePartyStyle2('sexy')">
 	</figure>
 	<br>
+	<a href="party1.html"><button class="stylebutton">back &rsaquo;</button></a>
 	<button class="stylebutton" onclick="addPartyStyle2()" >next &rsaquo;</button>
 </div>
 <!-- questions -->
@@ -56,6 +58,28 @@ rocker = false
 sexy = false
 edgy = false
 sophisticated = false
+if(sessionStorage.party2!=null){
+	if(sessionStorage.party2.indexOf('rocker')>=0){
+		rocker = true;
+		document.getElementById("rocker").style.border = "0.3vw solid black";
+		document.getElementById("rocker").style.boxSizing = "border-box";
+	}
+	if(sessionStorage.party2.indexOf('sexy')>=0){
+		sexy = true;
+		document.getElementById("sexy").style.border = "0.3vw solid black";
+		document.getElementById("sexy").style.boxSizing = "border-box";
+	}
+	if(sessionStorage.party2.indexOf('edgy')>=0){
+		edgy = true;
+		document.getElementById("edgy").style.border = "0.3vw solid black";
+		document.getElementById("edgy").style.boxSizing = "border-box";
+	}
+	if(sessionStorage.party2.indexOf('sophisticated')>=0){
+		sophisticated = true;
+		document.getElementById("sophisticated").style.border = "0.3vw solid black";
+		document.getElementById("sophisticated").style.boxSizing = "border-box";
+	}
+}
 function choosePartyStyle2(val) {
 	if(val=='rocker'){
 		rocker = !rocker
@@ -107,11 +131,11 @@ function addPartyStyle2(){
 	if(sophisticated)
 		styles.push("sophisticated")
 	if(typeof(Storage) !== "undefined") {
-		sessionStorage.style4 = null
+		sessionStorage.party2 = null
 		if(styles.length!=0)
-        	sessionStorage.style4 = styles.join();
+        	sessionStorage.party2 = styles;
     }
-    console.log(sessionStorage.style4);
+    console.log(sessionStorage.party2);
   	window.open("you3.html", "_self");
 }
 </script>

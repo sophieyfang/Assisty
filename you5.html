@@ -25,6 +25,7 @@
 
 <!-- questions -->
 <div class="youquestion5">
+	<p>Question 10 of 11</p>
 	<p>Which part of your body do you want to show off?</p>
 	<figure>
 		<img src="images/decolletage.png" width="100%" class="imgselection" id="decolletage" onclick="chooseShowOff('decolletage')">
@@ -43,6 +44,7 @@
 		<figcaption>abs</figcaption>
 	</figure>
 	<br>
+	<a href="you4.html"><button class="stylebutton">back &rsaquo;</button></a>
 	<button class="stylebutton" onclick="addShowOff()" >next &rsaquo;</button>
 </div>
 <!-- questions -->
@@ -60,6 +62,24 @@ decolletage = false
 back = false
 shoulders = false
 abs = false
+if(sessionStorage.showoff!=null){
+	if(sessionStorage.showoff.indexOf('decolletage')>=0){
+		decolletage = true;
+		document.getElementById("decolletage").style.WebkitAnimation = "imageselection 0.6s ease infinite";
+	}
+	if(sessionStorage.showoff.indexOf('back')>=0){
+		back = true;
+		document.getElementById("back").style.WebkitAnimation = "imageselection 0.6s ease infinite";
+	}
+	if(sessionStorage.showoff.indexOf('shoulders')>=0){
+		shoulders = true;
+		document.getElementById("shoulders").style.WebkitAnimation = "imageselection 0.6s ease infinite";
+	}
+	if(sessionStorage.showoff.indexOf('abs')>=0){
+		abs = true;
+		document.getElementById("abs").style.WebkitAnimation = "imageselection 0.6s ease infinite";
+	}
+}
 function chooseShowOff(val) {
 	if(val=='decolletage'){
 		decolletage = !decolletage
@@ -97,21 +117,23 @@ function chooseShowOff(val) {
 }
 
 function addShowOff(){
-	var styles = []
+	var showoff = []
 	if(decolletage)
-		styles.push("decolletage")
+		showoff.push("decolletage")
 	if(shoulders)
-		styles.push("shoulders")
+		showoff.push("shoulders")
 	if(back)
-		styles.push("back")
+		showoff.push("back")
 	if(abs)
-		styles.push("abs")
+		showoff.push("abs")
 	if(typeof(Storage) !== "undefined") {
-		sessionStorage.style4 = null
-		if(styles.length!=0)
-        	sessionStorage.style4 = styles.join();
+		sessionStorage.showoff = null
+		if(showoff.length!=0)
+        	sessionStorage.showoff = showoff.join();
+        else 
+        	sessionStorage.showoff = []
     }
-    console.log(sessionStorage.style4);
+    console.log(sessionStorage.showoff);
   	window.open("you6.html", "_self");
 }
 </script>
