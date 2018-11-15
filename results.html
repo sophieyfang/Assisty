@@ -73,7 +73,8 @@ $.ajax({
 
           $.each( data.hits.hits, function( index, value ) {
   	console.log(value._source);
-  			$(".container").append("<a href=" + value._source.itemurl + ">" + "<img class='prodimg' src=" + value._source.imageUrl + "><p class='prodname'>" + value._source.name + "</p><p class='seller'>" + value._source.sellerName + "</p><p class='price'>" + value._source.price + "</p></a>");
+      var shorterName = jQuery.trim(value._source.name).substring(0, 25)+ "...";
+  			$(".container").append("<a href=" + value._source.itemurl + ">" + "<img class='prodimg' src=" + value._source.imageUrl + "><p class='prodname'>" +  shorterName + "</p><p class='seller'>" + value._source.sellerName + "</p><p class='price'>" + value._source.price + "</p></a>");
  		 });
     }
 });
