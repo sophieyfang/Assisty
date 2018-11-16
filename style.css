@@ -459,7 +459,7 @@ h2 {
 
 .stylebutton {
 	/*position: absolute;*/
-	border: 0.15vw solid black;
+	border: 0.15vw solid #000000;
 	padding: 1vw 1.8vw 1vw 1.8vw;
 	font-family: courier-std, mono;
 	text-transform: lowercase;
