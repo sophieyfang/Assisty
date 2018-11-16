@@ -619,7 +619,7 @@ video {
 .arrowright {
 	position: absolute;
 	z-index: 1;
-	margin-left: 75vw;
+	margin-left: 80vw;
 	margin-top: 12.5vw;
 	opacity: 0.7;
 }
