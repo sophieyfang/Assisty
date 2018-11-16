@@ -584,3 +584,28 @@ li {
 	text-transform: lowercase;
 	font-size: 1.3vw;
 }
+
+@media only screen and (max-width: 1400px) {
+.content {
+	position: absolute;
+	margin-top: 1vw;
+	width: 100%;
+	text-align: center;
+}
+
+h1 {
+	font-size: 2.8vw;
+	font-family: courier-std, mono;
+	font-weight: 500;
+}
+
+h2 {
+	font-weight: 400;
+	font-size: 1.3vw;
+	letter-spacing: 0.1vw;
+	line-height: 1.8vw;
+	font-family: courier-std, mono;
+	margin-top: 4vw;
+}
+
+}
