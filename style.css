@@ -627,7 +627,7 @@ video {
 .arrowleft5 {
 	position: absolute;
 	z-index: 1;
-	margin-left: -45.5vw;
+	margin-left: -7vw;
 	margin-top: 6vw;
 	opacity: 0.7;
 }
@@ -635,7 +635,7 @@ video {
 .arrowright5 {
 	position: absolute;
 	z-index: 1;
-	margin-left: 44vw;
+	margin-left: 80vw;
 	margin-top: 6vw;
 	opacity: 0.7;
 }
