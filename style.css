@@ -585,6 +585,60 @@ li {
 	font-size: 1.3vw;
 }
 
+.questioncount {
+	font-family: helvetica, sans;
+	text-transform: uppercase;
+	color: #595959;
+	font-size: 1.1vw;
+	letter-spacing: 0.1vw;
+}
+
+video {
+	width: 35%;
+}
+
+.arrowleft {
+	position: absolute;
+	z-index: 1;
+	margin-left: -45.5vw;
+	margin-top: 12.5vw;
+	opacity: 0.7;
+}
+
+.arrowright {
+	position: absolute;
+	z-index: 1;
+	margin-left: 44vw;
+	margin-top: 12.5vw;
+	opacity: 0.7;
+}
+
+.arrowleft5 {
+	position: absolute;
+	z-index: 1;
+	margin-left: -45.5vw;
+	margin-top: 6vw;
+	opacity: 0.7;
+}
+
+.arrowright5 {
+	position: absolute;
+	z-index: 1;
+	margin-left: 44vw;
+	margin-top: 6vw;
+	opacity: 0.7;
+}
+
+.arrowright:hover, .arrowleft:hover {
+	opacity: 0.9;
+	transition: 0.2s
+}
+
+.arrowright5:hover, .arrowleft5:hover {
+	opacity: 0.9;
+	transition: 0.2s
+}
+
 @media only screen and (max-width: 1400px) {
 .content {
 	position: absolute;
@@ -600,9 +654,74 @@ h2 {
 	font-size: 1.3vw;
 }
 
+video {
+	margin-top: -1vw;
+	width: 30%;
+}
+
 .forwho {
+	margin-top: 3vw;
+}
+
+.questiontitle {
+	font-size: 1.4vw;
+}
+
+.questiontitle2 {
+	font-size: 1.4vw;
 	margin-top: 4vw;
 }
 
+.youquestion {
+	margin-top: 8vw;
+}
+
+.youquestion0 {
+	margin-top: 9vw;
+}
+
+.youquestion0 figure {
+	width: 14vw;
+	margin-right: 1.5vw;
+	margin-left: 1.5vw;
+}
+
+.youquestion1 {
+	margin-top: 7vw;
+}
+
+.style1 {
+	margin-top: 6vw;
+}
+
+.style1 figure {
+	width: 15vw;
+}
+
+.youquestion3 {
+	margin-top: 3.5vw;
+	height: 36vw;
+}
+
+.youquestion3 figure {
+	display: inline-block;
+	width: 6vw;
+	margin-top: 2.5vw;
+	margin-bottom: 0;
+	margin-right: 1.5vw;
+	margin-left: 1.5vw;
+}
+
+.youquestion4 {
+	margin-top: 8vw;
+}
+
+.youquestion5 {
+	margin-top: 10vw;
+}
+
+.stylebutton {
+	margin-bottom: 2vw;
+}
 
 }

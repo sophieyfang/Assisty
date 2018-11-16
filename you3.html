@@ -25,8 +25,10 @@
 
 <!-- questions -->
 <div class="youquestion3">
-	<p>Question 7 of 10</p>
-	<p>Which colors do you like?</p>
+	<p class="questioncount">Question 7 of 10</p>
+	<p class="questiontitle">Which colors do you like?</p>
+	<a href="party2.html" class="arrowleft"><img src="images/arrowleft.png" width="50%"></a>
+	<a href="you4.html" class="arrowright"><img src="images/arrowright.png" width="50%"></a>
 	<figure>
 		<img src="images/yellow.png" class="imgselection" id="yellow" width="100%" onclick="chooseColor('yellow')">
 		<!-- <figcaption>yellow</figcaption> -->
@@ -64,7 +66,7 @@
 		<!-- <figcaption>grey</figcaption> -->
 	</figure><br>
 	<!-- <a href="party2.html"><button class="stylebutton">back &rsaquo;</button></a> -->
-	<button class="stylebuttoncolor" onclick="getColors()">next &rsaquo;</button>
+	<!-- <button class="stylebuttoncolor" onclick="getColors()">next &rsaquo;</button> -->
 </div>
 
 
@@ -121,113 +123,113 @@ pink = false
 if(sessionStorage.colors!=null){
 	if(sessionStorage.colors.indexOf('yellow')>=0){
 		yellow = true;
-document.getElementById("yellow").style.boxShadow = "10px 20px 30px lightblue";
+document.getElementById("yellow").style.WebkitAnimation = "imageselection 0.6s ease infinite";
 	}
 	if(sessionStorage.colors.indexOf('green')>=0){
 		green = true;
-document.getElementById("green").style.boxShadow = "10px 20px 30px lightblue";
+document.getElementById("green").style.WebkitAnimation = "imageselection 0.6s ease infinite";
 	}
 	if(sessionStorage.colors.indexOf('black')>=0){
 		black = true;
-document.getElementById("black").style.boxShadow = "10px 20px 30px lightblue";
+document.getElementById("black").style.WebkitAnimation = "imageselection 0.6s ease infinite";
 	}
 	if(sessionStorage.colors.indexOf('white')>=0){
 		white = true;
-document.getElementById("white").style.boxShadow = "10px 20px 30px lightblue";
+document.getElementById("white").style.WebkitAnimation = "imageselection 0.6s ease infinite";
 	}
 	if(sessionStorage.colors.indexOf('blue')>=0){
 		blue = true;
-document.getElementById("blue").style.boxShadow = "10px 20px 30px lightblue";
+document.getElementById("blue").style.WebkitAnimation = "imageselection 0.6s ease infinite";
 	}
 	if(sessionStorage.colors.indexOf('grey')>=0){
 		grey = true;
-document.getElementById("grey").style.boxShadow = "10px 20px 30px lightblue";
+document.getElementById("grey").style.WebkitAnimation = "imageselection 0.6s ease infinite";
 	}
 	if(sessionStorage.colors.indexOf('orange')>=0){
 		orange = true;
-document.getElementById("orange").style.boxShadow = "10px 20px 30px lightblue";
+document.getElementById("orange").style.WebkitAnimation = "imageselection 0.6s ease infinite";
 	}
 	if(sessionStorage.colors.indexOf('red')>=0){
 		red = true;
-		document.getElementById("red").style.boxShadow = "10px 20px 30px lightblue";
+		document.getElementById("red").style.WebkitAnimation = "imageselection 0.6s ease infinite";
 	}
 	if(sessionStorage.colors.indexOf('pink')>=0){
 		pink = true;
-		document.getElementById("pink").style.boxShadow = "10px 20px 30px lightblue";
+		document.getElementById("pink").style.WebkitAnimation = "imageselection 0.6s ease infinite";
 	}
 }
 function chooseColor(val) {
 	if(val=='yellow'){
 		yellow = !yellow
 		if(yellow)
-			document.getElementById("yellow").style.boxShadow = "10px 20px 30px lightblue";
+			document.getElementById("yellow").style.WebkitAnimation = "imageselection 0.6s ease infinite";
 		else {
-			document.getElementById("yellow").style.boxShadow = "";
+			document.getElementById("yellow").style.WebkitAnimation = "";
 		}
 	}
 	if(val=='green'){
 		green = !green
 		if(green)
-			document.getElementById("green").style.boxShadow = "10px 20px 30px lightblue";
+			document.getElementById("green").style.WebkitAnimation = "imageselection 0.6s ease infinite";
 		else {
-			document.getElementById("green").style.boxShadow = "";
+			document.getElementById("green").style.WebkitAnimation = "";
 		}
 	}
 		if(val=='black'){
 		black = !black
 		if(black)
-			document.getElementById("black").style.boxShadow = "10px 20px 30px lightblue";
+			document.getElementById("black").style.WebkitAnimation = "imageselection 0.6s ease infinite";
 		else {
-			document.getElementById("black").style.boxShadow = "";
+			document.getElementById("black").style.WebkitAnimation = "";
 		}
 	}
 		if(val=='red'){
 		red = !red
 		if(red)
-			document.getElementById("red").style.boxShadow = "10px 20px 30px lightblue";
+			document.getElementById("red").style.WebkitAnimation = "imageselection 0.6s ease infinite";
 		else {
-			document.getElementById("red").style.boxShadow = "";
+			document.getElementById("red").style.WebkitAnimation = "";
 		}
 	}
 		if(val=='pink'){
 		pink = !pink
 		if(pink)
-			document.getElementById("pink").style.boxShadow = "10px 20px 30px lightblue";
+			document.getElementById("pink").style.WebkitAnimation = "imageselection 0.6s ease infinite";
 		else {
-			document.getElementById("pink").style.boxShadow = "";
+			document.getElementById("pink").style.WebkitAnimation = "";
 		}
 	}
 
 			if(val=='white'){
 		white = !white
 		if(white)
-			document.getElementById("white").style.boxShadow = "10px 20px 30px lightblue";
+			document.getElementById("white").style.WebkitAnimation = "imageselection 0.6s ease infinite";
 		else {
-			document.getElementById("white").style.boxShadow = "";
+			document.getElementById("white").style.WebkitAnimation = "";
 		}
 	}
 			if(val=='grey'){
 		grey = !grey
 		if(grey)
-			document.getElementById("grey").style.boxShadow = "10px 20px 30px lightblue";
+			document.getElementById("grey").style.WebkitAnimation = "imageselection 0.6s ease infinite";
 		else {
-			document.getElementById("grey").style.boxShadow = "";
+			document.getElementById("grey").style.WebkitAnimation = "";
 		}
 	}
 			if(val=='blue'){
 		blue = !blue
 		if(blue)
-			document.getElementById("blue").style.boxShadow = "10px 20px 30px lightblue";
+			document.getElementById("blue").style.WebkitAnimation = "imageselection 0.6s ease infinite";
 		else {
-			document.getElementById("blue").style.boxShadow = "";
+			document.getElementById("blue").style.WebkitAnimation = "";
 		}
 	}
 				if(val=='orange'){
 		orange = !orange
 		if(orange)
-			document.getElementById("orange").style.boxShadow = "10px 20px 30px lightblue";
+			document.getElementById("orange").style.WebkitAnimation = "imageselection 0.6s ease infinite";
 		else {
-			document.getElementById("orange").style.boxShadow = "";
+			document.getElementById("orange").style.WebkitAnimation = "";
 		}
 	}
 }
