@@ -591,8 +591,18 @@ li {
 	margin-top: 0.5vw;
 }
 
+h1 {
+	font-size: 2.5vw;
+}
+
 h2 {
+	margin-top: 3vw;
+	font-size: 1.3vw;
+}
+
+.forwho {
 	margin-top: 4vw;
 }
+
 
 }
