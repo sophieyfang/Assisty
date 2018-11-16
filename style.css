@@ -541,18 +541,12 @@ li {
 }
 
 .results h1 {
-	font-size: 3vw;
-}
-
-.results span {
-	position: absolute;
-	margin-top: -1vw;
-	margin-left: 0.3vw;
+	font-size: 2.6vw;
 }
 
 .container {
 	position: absolute;
-	margin-top: 20vw;
+	margin-top: 22vw;
 	width: 90vw;
 	height: 49vw;
 	margin-left: 8vw;
@@ -569,20 +563,37 @@ li {
 	display: inline-block;
 	width: 30vw;
 	vertical-align: top;
+	padding-bottom: 4vw;
 }
 
 .container p {
 	width: 20vw;
-	font-family: courier-std, mono;
-	text-transform: lowercase;
+	font-family: helvetica, sans;
+	text-transform: uppercase;
 	font-size: 1vw;
+	letter-spacing: 0.1vw;
 }
 
 .prodname {
 	width: 18vw;
-	font-family: courier-std, mono;
-	text-transform: lowercase;
-	font-size: 1.3vw;
+	font-family: helvetica, sans;
+	text-transform: uppercase;
+	font-size: 1.7vw;
+}
+
+.container .seller {
+	color: #595959;
+	font-size: 0.9vw;
+}
+
+.price {
+	font-weight: 700;
+}
+
+.save {
+	position: absolute;
+	margin-top: 0vw;
+	font-size: 1.2vw;
 }
 
 .questioncount {

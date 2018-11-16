@@ -26,9 +26,8 @@
 
 <!-- content -->
 <div class="results">
-	<h1>enjoy your results!</h1>
-	<span>250 items</span>
-	<!-- the span should show how many items there are for the search results -->
+	<h1>Assisty's picks for you</h1>
+  <a href="etsy2.html" class="stylebutton save">save results</a>
 </div>
 
 <div class="container"></div>
@@ -73,8 +72,8 @@ $.ajax({
 
           $.each( data.hits.hits, function( index, value ) {
   	console.log(value._source);
-      var shorterName = jQuery.trim(value._source.name).substring(0, 25)+ "...";
-  			$(".container").append("<a href=" + value._source.itemurl + ">" + "<img class='prodimg' src=" + value._source.imageUrl + "><p class='prodname'>" +  shorterName + "</p><p class='seller'>" + value._source.sellerName + "</p><p class='price'>" + value._source.price + "</p></a>");
+      var shorterName = jQuery.trim(value._source.name).substring(0, 22)+ "...";
+  			$(".container").append("<a href=" + value._source.itemurl + ">" + "<img class='prodimg' src=" + value._source.imageUrl + "><p class='prodname'>" +  shorterName + "</p><p class='seller'>" + value._source.sellerName + "</p><p class='price'>$" + value._source.price + "</p></a>");
  		 });
     }
 });
