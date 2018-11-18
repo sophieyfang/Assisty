@@ -459,7 +459,7 @@ h2 {
 
 .stylebutton {
 	/*position: absolute;*/
-	border: 0.15vw solid black;
+	border: 0.15vw solid #000000;
 	padding: 1vw 1.8vw 1vw 1.8vw;
 	font-family: courier-std, mono;
 	text-transform: lowercase;
@@ -611,7 +611,7 @@ video {
 .arrowleft {
 	position: absolute;
 	z-index: 1;
-	margin-left: -45.5vw;
+	margin-left: -7vw;
 	margin-top: 12.5vw;
 	opacity: 0.7;
 }
@@ -619,7 +619,23 @@ video {
 .arrowright {
 	position: absolute;
 	z-index: 1;
-	margin-left: 44vw;
+	margin-left: 80vw;
+	margin-top: 12.5vw;
+	opacity: 0.7;
+}
+
+.arrowright3 {
+	position: absolute;
+	z-index: 1;
+	margin-left: 50vw;
+	margin-top: 12.5vw;
+	opacity: 0.7;
+}
+
+.arrowleft3 {
+	position: absolute;
+	z-index: 1;
+	margin-left: -18vw;
 	margin-top: 12.5vw;
 	opacity: 0.7;
 }
@@ -627,7 +643,7 @@ video {
 .arrowleft5 {
 	position: absolute;
 	z-index: 1;
-	margin-left: -45.5vw;
+	margin-left: -7vw;
 	margin-top: 6vw;
 	opacity: 0.7;
 }
@@ -635,7 +651,7 @@ video {
 .arrowright5 {
 	position: absolute;
 	z-index: 1;
-	margin-left: 44vw;
+	margin-left: 73vw;
 	margin-top: 6vw;
 	opacity: 0.7;
 }
