@@ -6,63 +6,51 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" href="https://use.typekit.net/znk3xkz.css">
 </head>
-<body>
+<body class="questions">
 
 <!-- header -->
-<div id="mySidenav" class="sidenav">
-  	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-	<a href="index.html">Home</a>
-	<a href="about.html">Why Us</a>
-	<a href="gift.html">Gift it</a>
-	<a href="https://www.etsy.com">Shop</a>
-</div>
-
-<div class="head">
-	<span onclick="openNav()">+</span>
-	<a href="you.html">For You</a>
-</div>
+<img src="images/menu.png" width="100%">
 <!-- header -->
 
 <!-- questions -->
 <div class="youquestion6">
-	<p class="questioncount">Question 10 of 10</p>
+	<img src="images/q9.png" width="15%" class="qcount">
 	<p class="questiontitle">What dress length do you prefer?</p>
 	<figure>
 		<img src="images/length3.png" width="70%" class="imgselection" onclick="chooseDressLength('short')" id="dressShort">
-		<figcaption>short</figcaption>
+		<figcaption>Short</figcaption>
 	</figure>
 	<figure>
 		<img src="images/length2.png" width="70%" class="imgselection" onclick="chooseDressLength('medium')" id="dressMedium">
-		<figcaption>medium</figcaption>
+		<figcaption>Medium</figcaption>
 	</figure>
 	<figure>
 		<img src="images/length1.png" width="70%" class="imgselection" onclick="chooseDressLength('long')" id="dressLong">
-		<figcaption>long</figcaption>
+		<figcaption>Long</figcaption>
 	</figure>
 	<br>
 	<p class="questiontitle2">What sleeve length do you prefer?</p>
 	<figure>
 		<img src="images/length4.png" width="100%" class="imgselection" onclick="chooseSleeve('short')" id="sleeveShort">
-		<figcaption>short</figcaption>
+		<figcaption>Short</figcaption>
 	</figure>
 	<figure>
 		<img src="images/length5.png" width="100%" class="imgselection" onclick="chooseSleeve('medium')" id="sleeveMedium">
-		<figcaption>medium</figcaption>
+		<figcaption>Medium</figcaption>
 	</figure>
 	<figure>
 		<img src="images/length6.png" width="100%" class="imgselection" onclick="chooseSleeve('long')" id="sleeveLong">
-		<figcaption>long</figcaption>
+		<figcaption>Long</figcaption>
 	</figure>
 	<br>
 	<!-- <a href="you5.html"><button class="stylebutton">back &rsaquo;</button></a> -->
-	<button class="stylebutton" onclick="getLength()">discover now &rsaquo;</button>
+	<!-- <button class="stylebutton" onclick="getLength()">discover now &rsaquo;</button> -->
+	<div class="done" onclick="getLength()">discover now &rsaquo;</div>
 </div>
 <!-- questions -->
 
 <script>
-function openNav() {
-    document.getElementById("mySidenav").style.width = "16vw";
-}
+
 function getLength(){
 	len = []
 	if(dressLength!=null)
@@ -189,9 +177,7 @@ function chooseSleeve(val) {
 		}
 	}
 }
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
+
 </script>
 </body>
 </html>

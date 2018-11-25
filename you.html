@@ -6,46 +6,28 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" href="https://use.typekit.net/znk3xkz.css">
 </head>
-<body>
+<body class="questions">
 
 <!-- header -->
-<div id="mySidenav" class="sidenav">
-  	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-	<a href="index.html">Home</a>
-	<a href="about.html">Why Us</a>
-	<a href="gift.html">Gift it</a>
-	<a href="https://www.etsy.com">Shop</a>
-</div>
-
-<div class="head">
-	<span onclick="openNav()">+</span>
-	<a href="you.html">For You</a>
-</div>
+<img src="images/menu.png" width="100%">
 <!-- header -->
 
 <!-- questions -->
 <div class="youquestion">
-	<p class="questioncount">Question 1 of 10</p>
+	<img src="images/q1.png" width="15%" class="qcount">
 	<p class="questiontitle">What kind of items are you looking for?</p>
 	<figure>
 		<img src="images/female.png" width="100%" class="imgselection" onclick="chooseFemale()" id ="female">
-		<figcaption>female</figcaption>
+		<figcaption>Female</figcaption>
 	</figure>
 	<figure>
 		<img src="images/male.png" width="100%" class="imgselection">
-		<figcaption>male</figcaption>
+		<figcaption>Male</figcaption>
 	</figure>
 </div>
 <!-- questions -->
 
 <script>
-function openNav() {
-	document.getElementById("mySidenav").style.width = "16vw";
-}
-
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
 
 function chooseFemale() {
 	if(typeof(Storage) !== "undefined") {

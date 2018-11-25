@@ -6,26 +6,15 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" href="https://use.typekit.net/znk3xkz.css">
 </head>
-<body>
+<body class="questions">
 
 <!-- header -->
-<div id="mySidenav" class="sidenav">
-  	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-	<a href="index.html">Home</a>
-	<a href="about.html">Why Us</a>
-	<a href="gift.html">Gift it</a>
-	<a href="https://www.etsy.com">Shop</a>
-</div>
-
-<div class="head">
-	<span onclick="openNav()">+</span>
-	<a href="you.html">For You</a>
-</div>
+<img src="images/menu.png" width="100%">
 <!-- header -->
 
 <!-- questions -->
 <div class="youquestion0">
-	<p class="questioncount">Question 2 of 10</p>
+	<img src="images/q2.png" width="15%" class="qcount">
 	<p class="questiontitle">What do you want to buy today?</p>
 	<figure>
 		<img src="images/clothing.png" width="100%" class="imgselection" onclick="chooseClothes()" id ="clothes">
@@ -48,13 +37,6 @@
 <!-- questions -->
 
 <script>
-function openNav() {
-	document.getElementById("mySidenav").style.width = "16vw";
-}
-
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
 
 function chooseClothes() {
 	if(typeof(Storage) !== "undefined") {

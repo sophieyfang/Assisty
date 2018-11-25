@@ -6,57 +6,41 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" href="https://use.typekit.net/znk3xkz.css">
 </head>
-<body>
+<body class="questions">
 
 <!-- header -->
-<div id="mySidenav" class="sidenav">
-  	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-	<a href="index.html">Home</a>
-	<a href="about.html">Why Us</a>
-	<a href="gift.html">Gift it</a>
-	<a href="https://www.etsy.com">Shop</a>
-</div>
-
-<div class="head">
-	<span onclick="openNav()">+</span>
-	<a href="you.html">For You</a>
-</div>
+<img src="images/menu.png" width="100%">
 <!-- header -->
 
 <!-- questions -->
 <div class="youquestion5">
-	<p class="questioncount">Question 9 of 10</p>
+	<img src="images/q9.png" width="15%" class="qcount">
 	<p class="questiontitle">Which part of your body do you want to show off?</p>
-	<a href="you4.html" class="arrowleft5"><img src="images/arrowleft.png" width="50%"></a>
-	<a class="arrowright5" onclick="addShowOff()"><img src="images/arrowright.png" width="50%"></a>
+	<!-- <a href="you4.html" class="arrowleft5"><img src="images/arrowleft.png" width="50%"></a>
+	<a class="arrowright5" onclick="addShowOff()"><img src="images/arrowright.png" width="50%"></a> -->
 	<figure>
 		<img src="images/decolletage.png" width="100%" class="imgselection" id="decolletage" onclick="chooseShowOff('decolletage')">
-		<figcaption>decolletage</figcaption>
+		<figcaption>Decolletage</figcaption>
 	</figure>
 	<figure>
 		<img src="images/back.png" width="100%" class="imgselection" id="back" onclick="chooseShowOff('back')">
-		<figcaption>back</figcaption>
+		<figcaption>Back</figcaption>
 	</figure>
 	<figure>
 		<img src="images/shoulders.png" width="100%" class="imgselection" id="shoulders" onclick="chooseShowOff('shoulders')">
-		<figcaption>shoulders</figcaption>
+		<figcaption>Shoulders</figcaption>
 	</figure>
 	<figure>
 		<img src="images/abs.png" width="85%" class="imgselection" id="abs" onclick="chooseShowOff('abs')">
-		<figcaption>abs</figcaption>
+		<figcaption>Abs</figcaption>
 	</figure>
 	<br>
+	<!-- <div class="hello">hello</div> -->
+	<a class="next" onclick="addShowOff()">next &rsaquo;</a>
 </div>
 <!-- questions -->
 
 <script>
-function openNav() {
-    document.getElementById("mySidenav").style.width = "16vw";
-}
-
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
 
 decolletage = false
 back = false

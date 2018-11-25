@@ -6,30 +6,18 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" href="https://use.typekit.net/znk3xkz.css">
 </head>
-<body>
+<body class="questions">
 
 <!-- header -->
-<div id="mySidenav" class="sidenav">
-  	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-	<a href="index.html">Home</a>
-	<a href="about.html">Why Us</a>
-	<a href="gift.html">Gift it</a>
-	<a href="https://www.etsy.com">Shop</a>
-</div>
-
-<div class="head">
-	<span onclick="openNav()">+</span>
-	<a href="you.html">For You</a>
-</div>
+<img src="images/menu.png" width="100%">
 <!-- header -->
 
 <!-- questions -->
 <div class="style1">
-	<p class="questioncount">Question 5 of 10</p>
-	<p class="questiontitle">Which dress do you prefer?</p>
-	<a href="you2.html" class="arrowleft"><img src="images/arrowleft.png" width="50%"></a>
-	<a class="arrowright"><img src="images/arrowright.png" width="50%" onclick="addPartyStyle1()"></a>
-	<a class="arrowright" onclick="addPartyStyle1()"><img src="images/arrowright.png" width="50%"></a>
+	<img src="images/q5.png" width="15%" class="qcount">
+	<p class="questiontitle">Which dresses do you like?</p>
+	<!-- <a href="you2.html" class="arrowleft"><img src="images/arrowleft.png" width="50%"></a> -->
+	<!-- <a class="arrowright" onclick="addPartyStyle1()"><img src="images/arrowright.png" width="50%"></a> -->
 	<figure>
 		<img src="images/rocker1.png" width="100%" class="imgselection2" id="rocker" onclick="choosePartyStyle1('rocker')">
 	</figure>
@@ -43,19 +31,11 @@
 		<img src="images/sexy1.png" width="100%" class="imgselection2" id="sexy" onclick="choosePartyStyle1('sexy')">
 	</figure>
 	<br>
-	<!-- <a href="you2.html"><button class="stylebutton">back &rsaquo;</button></a> -->
-	<!-- <button class="stylebutton" onclick="addPartyStyle1()" >next &rsaquo;</button> -->
+	<div class="next" onclick="addPartyStyle1()">next &rsaquo;</div>
 </div>
 <!-- questions -->
 
 <script>
-function openNav() {
-    document.getElementById("mySidenav").style.width = "16vw";
-}
-
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
 
 rocker = false
 sexy = false
@@ -64,60 +44,52 @@ sophisticated = false
 if(sessionStorage.party1!=null){
 	if(sessionStorage.party1.indexOf('rocker')>=0){
 		rocker = true;
-		document.getElementById("rocker").style.border = "0.3vw solid black";
-		document.getElementById("rocker").style.boxSizing = "border-box";
+		document.getElementById("rocker").style.boxSizing = "content-box";
 	}
 	if(sessionStorage.party1.indexOf('sexy')>=0){
 		sexy = true;
-		document.getElementById("sexy").style.border = "0.3vw solid black";
-		document.getElementById("sexy").style.boxSizing = "border-box";
+		document.getElementById("sexy").style.boxSizing = "content-box";
 	}
 	if(sessionStorage.party1.indexOf('edgy')>=0){
 		edgy = true;
-		document.getElementById("edgy").style.border = "0.3vw solid black";
-		document.getElementById("edgy").style.boxSizing = "border-box";
+		document.getElementById("edgy").style.boxSizing = "content-box";
 	}
 	if(sessionStorage.party1.indexOf('sophisticated')>=0){
 		sophisticated = true;
-		document.getElementById("sophisticated").style.border = "0.3vw solid black";
-		document.getElementById("sophisticated").style.boxSizing = "border-box";
+		document.getElementById("sophisticated").style.boxSizing = "content-box";
 	}
 }
 function choosePartyStyle1(val) {
 	if(val=='rocker'){
 		rocker = !rocker
 		if(rocker) {
-			document.getElementById("rocker").style.border = "0.3vw solid black";
-			document.getElementById("rocker").style.boxSizing = "border-box";
+			document.getElementById("rocker").style.boxSizing = "content-box";
 		} else {
-			document.getElementById("rocker").style.border = "";
+			document.getElementById("rocker").style.boxSizing = "border-box";
 		}
 	}
 	if(val=='sophisticated'){
 		sophisticated = !sophisticated
 		if(sophisticated) {
-			document.getElementById("sophisticated").style.border = "0.3vw solid black";
-			document.getElementById("sophisticated").style.boxSizing = "border-box";;
+			document.getElementById("sophisticated").style.boxSizing = "content-box";
 		} else {
-			document.getElementById("sophisticated").style.border = "";
+			document.getElementById("sophisticated").style.boxSizing = "border-box";
 		}
 	}
 	if(val=='edgy'){
 		edgy = !edgy
 		if(edgy) {
-			document.getElementById("edgy").style.border = "0.3vw solid black";
-			document.getElementById("edgy").style.boxSizing = "border-box";
+			document.getElementById("edgy").style.boxSizing = "content-box";
 		} else {
-			document.getElementById("edgy").style.border = "";
+			document.getElementById("edgy").style.boxSizing = "border-box";
 		}
 	}
 	if(val=='sexy'){
 		sexy = !sexy
 		if(sexy) {
-			document.getElementById("sexy").style.border = "0.3vw solid black";
-			document.getElementById("sexy").style.boxSizing = "border-box";
+			document.getElementById("sexy").style.boxSizing = "content-box";
 		} else {
-			document.getElementById("sexy").style.border = "";
+			document.getElementById("sexy").style.boxSizing = "border-box";
 		}
 	}
 

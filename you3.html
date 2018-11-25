@@ -6,29 +6,18 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" href="https://use.typekit.net/znk3xkz.css">
 </head>
-<body>
+<body class="questions">
 
 <!-- header -->
-<div id="mySidenav" class="sidenav">
-  	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-	<a href="index.html">Home</a>
-	<a href="about.html">Why Us</a>
-	<a href="gift.html">Gift it</a>
-	<a href="https://www.etsy.com">Shop</a>
-</div>
-
-<div class="head">
-	<span onclick="openNav()">+</span>
-	<a href="you.html">For You</a>
-</div>
+<img src="images/menu.png" width="100%">
 <!-- header -->
 
 <!-- questions -->
 <div class="youquestion3">
-	<p class="questioncount">Question 7 of 10</p>
-	<p class="questiontitle">Which colors do you like?</p>
-	<a href="party2.html" class="arrowleft3"><img src="images/arrowleft.png" width="50%"></a>
-	<a class="arrowright3" onclick="getColors()"><img src="images/arrowright.png" width="50%"></a>
+	<img src="images/q7.png" width="15%" class="qcount">
+	<p class="questiontitle">Which colors do you like to wear?</p>
+	<!-- <a href="party2.html" class="arrowleft3"><img src="images/arrowleft.png" width="50%"></a> -->
+	<!-- <a class="arrowright3" onclick="getColors()"><img src="images/arrowright.png" width="50%"></a> -->
 	<figure>
 		<img src="images/yellow.png" class="imgselection" id="yellow" width="100%" onclick="chooseColor('yellow')">
 		<!-- <figcaption>yellow</figcaption> -->
@@ -40,7 +29,7 @@
 	<figure>
 		<img src="images/blue.png" class="imgselection" id="blue" width="100%" onclick="chooseColor('blue')">
 		<!-- <figcaption>blue</figcaption> -->
-	</figure><br>
+	</figure>
 	<figure>
 		<img src="images/pink.png" class="imgselection" id="pink" width="100%" onclick="chooseColor('pink')">
 		<!-- <figcaption>pink</figcaption> -->
@@ -48,11 +37,15 @@
 	<figure>
 		<img src="images/red.png" class="imgselection" id="red" width="100%" onclick="chooseColor('red')">
 		<!-- <figcaption>red</figcaption> -->
-	</figure>
+	</figure><br>
 	<figure>
 		<img src="images/orange.png" class="imgselection" id="orange" width="100%" onclick="chooseColor('orange')">
 		<!-- <figcaption>orange</figcaption> -->
-	</figure><br>
+	</figure>
+	<figure>
+		<img src="images/cream.png" class="imgselection" id="cream" width="100%" onclick="chooseColor('cream')">
+		<!-- <figcaption>cream</figcaption> -->
+	</figure>
 	<figure>
 		<img src="images/black.png" class="imgselection" id="black" width="100%" onclick="chooseColor('black')">
 		<!-- <figcaption>black</figcaption> -->
@@ -67,19 +60,13 @@
 	</figure><br>
 	<!-- <a href="party2.html"><button class="stylebutton">back &rsaquo;</button></a> -->
 	<!-- <button class="stylebuttoncolor" onclick="getColors()">next &rsaquo;</button> -->
+	<div class="next" onclick="getColors()">next &rsaquo;</div>
 </div>
 
 
 <!-- questions -->
 
 <script>
-function openNav() {
-    document.getElementById("mySidenav").style.width = "16vw";
-}
-
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
 
 function getColors(){
 	var colors = []
@@ -95,6 +82,8 @@ function getColors(){
 		colors.push("grey")
 	if(orange)
 		colors.push("orange")
+	if(cream)
+		colors.push("cream")
 	if(red)
 		colors.push("red")
 	if(black)
@@ -120,6 +109,7 @@ grey =false
 orange =false
 red = false
 pink = false
+cream = false
 if(sessionStorage.colors!=null){
 	if(sessionStorage.colors.indexOf('yellow')>=0){
 		yellow = true;
@@ -148,6 +138,10 @@ document.getElementById("grey").style.WebkitAnimation = "imageselection 0.6s eas
 	if(sessionStorage.colors.indexOf('orange')>=0){
 		orange = true;
 document.getElementById("orange").style.WebkitAnimation = "imageselection 0.6s ease infinite";
+	}
+	if(sessionStorage.colors.indexOf('cream')>=0){
+		cream = true;
+document.getElementById("cream").style.WebkitAnimation = "imageselection 0.6s ease infinite";
 	}
 	if(sessionStorage.colors.indexOf('red')>=0){
 		red = true;
@@ -222,6 +216,14 @@ function chooseColor(val) {
 			document.getElementById("blue").style.WebkitAnimation = "imageselection 0.6s ease infinite";
 		else {
 			document.getElementById("blue").style.WebkitAnimation = "";
+		}
+	}
+			if(val=='cream'){
+		cream = !cream
+		if(cream)
+			document.getElementById("cream").style.WebkitAnimation = "imageselection 0.6s ease infinite";
+		else {
+			document.getElementById("cream").style.WebkitAnimation = "";
 		}
 	}
 				if(val=='orange'){

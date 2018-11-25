@@ -6,46 +6,35 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" href="https://use.typekit.net/znk3xkz.css">
 </head>
-<body>
+<body class="questions">
 
 <!-- header -->
-<div id="mySidenav" class="sidenav">
-  	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-	<a href="index.html">Home</a>
-	<a href="about.html">Why Us</a>
-	<a href="gift.html">Gift it</a>
-	<a href="https://www.etsy.com">Shop</a>
-</div>
-
-<div class="head">
-	<span onclick="openNav()">+</span>
-	<a href="you.html">For You</a>
-</div>
+<img src="images/menu.png" width="100%">
 <!-- header -->
 
 <!-- questions -->
 <div class="youquestion4">
-	<p class="questioncount">Question 4 of 10</p>
+	<img src="images/q4.png" width="15%" class="qcount">
 	<p class="questiontitle">What is the occasion?</p>
 	<figure>
 		<img src="images/hangout.png" width="100%" class="imgselection"  id="hangout" onclick="chooseOccasion('hangout')">
-		<figcaption>hang out</figcaption>
+		<figcaption>Hang out</figcaption>
 	</figure>
 	<figure>
 		<img src="images/work.png" width="30%" class="imgselection" id="work" onclick="chooseOccasion('work')">
-		<figcaption>work</figcaption>
+		<figcaption>Work</figcaption>
 	</figure>
 	<figure>
 		<img src="images/date.png" width="110%" class="imgselection" id="date" onclick="chooseOccasion('date')">
-		<figcaption>date</figcaption>
+		<figcaption>Date</figcaption>
 	</figure>
 	<figure>
 		<img src="images/party.png" width="90%" class="imgselection" id="party" onclick="chooseOccasion('party')">
-		<figcaption>party</figcaption>
+		<figcaption>Party</figcaption>
 	</figure>
 	<figure>
 		<img src="images/vacation.png" width="110%" class="imgselection" id="vacation" onclick="chooseOccasion('vacation')">
-		<figcaption>vacation</figcaption>
+		<figcaption>Vacation</figcaption>
 	</figure>
 	<br>
 	<!-- <a href="you1.html"><button class="stylebutton">back &rsaquo;</button></a> -->
@@ -53,13 +42,6 @@
 <!-- questions -->
 
 <script>
-	function openNav() {
-    document.getElementById("mySidenav").style.width = "16vw";
-}
-
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
 
 function chooseOccasion(val) {
 	sessionStorage.occasion = val;

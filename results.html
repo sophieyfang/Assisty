@@ -10,37 +10,24 @@
 <body>
 
 <!-- header -->
-<div id="mySidenav" class="sidenav">
-  	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-	<a href="index.html">Home</a>
-	<a href="about.html">Why Us</a>
-	<a href="gift.html">Gift it</a>
-	<a href="https://www.etsy.com">Shop</a>
-</div>
-
-<div class="head">
-	<span onclick="openNav()">+</span>
-	<a href="you.html">For You</a>
-</div>
+<img src="images/menu.png" width="100%">
+<p class="smallheader"><a href="etsy.html">Home</a> &nbsp;&rsaquo;&nbsp; <a href="results.html">Assisty Results</a></p>
 <!-- header -->
 
 <!-- content -->
 <div class="results">
-	<h1>Assisty's picks for you</h1>
-  <a href="etsy2.html" class="stylebutton save">save results</a>
+	<h1>Results</h1>
+  <h2>Enjoy Assisty's picks for you</h2>
+  <!-- <a href="etsy2.html" class="stylebutton save">save results</a> -->
+  <img src="images/filters.png" width="65%" class="filters">
 </div>
 
 <div class="container"></div>
 <!-- content -->
 
-<script>
-	function openNav() {
-    document.getElementById("mySidenav").style.width = "16vw";
-}
+<img class="resultsfooter" src="images/footer.png" width="100%">
 
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
+<script>
 
 styles = sessionStorage.party1+","+sessionStorage.party2;
 console.log(styles)
@@ -73,11 +60,11 @@ $.ajax({
           $.each( data.hits.hits, function( index, value ) {
   	console.log(value._source);
       var shorterName = jQuery.trim(value._source.name).substring(0, 22)+ "...";
-  			$(".container").append("<a href=" + value._source.itemurl + ">" + "<img class='prodimg' src=" + value._source.imageUrl + "><p class='prodname'>" +  shorterName + "</p><p class='seller'>" + value._source.sellerName + "</p><p class='price'>$" + value._source.price + "</p></a>");
+  			$(".container").append("<a class='prod' href=" + value._source.itemurl + ">" + "<img class='prodimg' src=" + value._source.imageUrl + "><p class='prodname'>" +  shorterName + "</p><p class='seller'>" + value._source.sellerName + "</p><p class='price'>$" + value._source.price + "</p></a>");
  		 });
     }
 });
-sessionStorage.clear();
+// sessionStorage.clear();
 </script>
 </body>
 </html>
