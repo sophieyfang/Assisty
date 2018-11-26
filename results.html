@@ -10,6 +10,10 @@
 <body>
 
 <!-- header -->
+<div id="overlay" onclick="off()">
+  <img src="images/signin.png" class="imgoverlay" width="23%">
+</div>
+
 <img src="images/menu.png" width="100%">
 <p class="smallheader"><a href="etsy.html">Home</a> &nbsp;&rsaquo;&nbsp; <a href="results.html">Assisty Results</a></p>
 <!-- header -->
@@ -19,6 +23,7 @@
 	<h1>Results</h1>
   <h2>Enjoy Assisty's picks for you</h2>
   <!-- <a href="etsy2.html" class="stylebutton save">save results</a> -->
+  <div class="save" onclick="on()">save results</div>
   <img src="images/filters.png" width="65%" class="filters">
 </div>
 
@@ -28,6 +33,13 @@
 <img class="resultsfooter" src="images/footer.png" width="100%">
 
 <script>
+function on() {
+    document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+    document.getElementById("overlay").style.display = "none";
+}
 
 styles = sessionStorage.party1+","+sessionStorage.party2;
 console.log(styles)
@@ -64,7 +76,7 @@ $.ajax({
  		 });
     }
 });
-// sessionStorage.clear();
+sessionStorage.clear();
 </script>
 </body>
 </html>

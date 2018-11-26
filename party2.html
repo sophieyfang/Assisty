@@ -32,7 +32,7 @@
 	</figure>
 	<br>
 	<!-- <button class="stylebutton" onclick="addPartyStyle2()" >next &rsaquo;</button> -->
-	<div class="next" onclick="addPartyStyle2()">next &rsaquo;</div>
+	<img src="images/next.png" class="next" onclick="addPartyStyle2()" width="8.5%">
 </div>
 <!-- questions -->
 
@@ -45,52 +45,52 @@ sophisticated = false
 if(sessionStorage.party2!=null){
 	if(sessionStorage.party2.indexOf('rocker')>=0){
 		rocker = true;
-		document.getElementById("rocker").style.boxSizing = "content-box";
+		document.getElementById("rocker").style.boxShadow = "5px 10px 18px #cccccc";
 	}
 	if(sessionStorage.party2.indexOf('sexy')>=0){
 		sexy = true;
-		document.getElementById("sexy").style.boxSizing = "content-box";
+		document.getElementById("sexy").style.boxShadow = "5px 10px 18px #cccccc";
 	}
 	if(sessionStorage.party2.indexOf('edgy')>=0){
 		edgy = true;
-		document.getElementById("edgy").style.boxSizing = "content-box";
+		document.getElementById("edgy").style.boxShadow = "5px 10px 18px #cccccc";
 	}
 	if(sessionStorage.party2.indexOf('sophisticated')>=0){
 		sophisticated = true;
-		document.getElementById("sophisticated").style.boxSizing = "content-box";
+		document.getElementById("sophisticated").style.boxShadow = "5px 10px 18px #cccccc";
 	}
 }
 function choosePartyStyle2(val) {
 	if(val=='rocker'){
 		rocker = !rocker
 		if(rocker) {
-			document.getElementById("rocker").style.boxSizing = "content-box";
+			document.getElementById("rocker").style.boxShadow = "5px 10px 18px #cccccc";
 		} else {
-			document.getElementById("rocker").style.boxSizing = "border-box";
+			document.getElementById("rocker").style.boxShadow = "";
 		}
 	}
 	if(val=='sophisticated'){
 		sophisticated = !sophisticated
 		if(sophisticated) {
-			document.getElementById("sophisticated").style.boxSizing = "content-box";
+			document.getElementById("sophisticated").style.boxShadow = "5px 10px 18px #cccccc";
 		} else {
-			document.getElementById("sophisticated").style.boxSizing = "border-box";
+			document.getElementById("sophisticated").style.boxShadow = "";
 		}
 	}
 	if(val=='edgy'){
 		edgy = !edgy
 		if(edgy) {
-			document.getElementById("edgy").style.boxSizing = "content-box";
+			document.getElementById("edgy").style.boxShadow = "5px 10px 18px #cccccc";
 		} else {
-			document.getElementById("edgy").style.boxSizing = "border-box";
+			document.getElementById("edgy").style.boxShadow = "";
 		}
 	}
 	if(val=='sexy'){
 		sexy = !sexy
 		if(sexy) {
-			document.getElementById("sexy").style.boxSizing = "content-box";
+			document.getElementById("sexy").style.boxShadow = "5px 10px 18px #cccccc";
 		} else {
-			document.getElementById("sexy").style.boxSizing = "border-box";
+			document.getElementById("sexy").style.boxShadow = "";
 		}
 	}
 
